@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B61D3EA1B1CA2F900EB10B5 /* Manicurist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manicurist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B61D3EA1B1CA2F900EB10B5 /* DecoRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecoRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B61D3EE1B1CA2F900EB10B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B61D3EF1B1CA2F900EB10B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B61D3F11B1CA2F900EB10B5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		2B61D3F61B1CA2F900EB10B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B61D3F81B1CA2F900EB10B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B61D3FB1B1CA2F900EB10B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2B61D4011B1CA2F900EB10B5 /* ManicuristTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManicuristTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B61D4011B1CA2F900EB10B5 /* DecoRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecoRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B61D4061B1CA2F900EB10B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B61D4071B1CA2F900EB10B5 /* DecoRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoRecipeTests.swift; sourceTree = "<group>"; };
 		2BAA74161B21C0FF008AC7D9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -101,8 +101,8 @@
 		2B61D3EB1B1CA2F900EB10B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B61D3EA1B1CA2F900EB10B5 /* Manicurist.app */,
-				2B61D4011B1CA2F900EB10B5 /* ManicuristTests.xctest */,
+				2B61D3EA1B1CA2F900EB10B5 /* DecoRecipe.app */,
+				2B61D4011B1CA2F900EB10B5 /* DecoRecipeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,9 +218,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B61D3E91B1CA2F900EB10B5 /* Manicurist */ = {
+		2B61D3E91B1CA2F900EB10B5 /* DecoRecipe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B61D40B1B1CA2F900EB10B5 /* Build configuration list for PBXNativeTarget "Manicurist" */;
+			buildConfigurationList = 2B61D40B1B1CA2F900EB10B5 /* Build configuration list for PBXNativeTarget "DecoRecipe" */;
 			buildPhases = (
 				2B61D3E61B1CA2F900EB10B5 /* Sources */,
 				2B61D3E71B1CA2F900EB10B5 /* Frameworks */,
@@ -230,14 +230,14 @@
 			);
 			dependencies = (
 			);
-			name = Manicurist;
+			name = DecoRecipe;
 			productName = DecoRecipe;
-			productReference = 2B61D3EA1B1CA2F900EB10B5 /* Manicurist.app */;
+			productReference = 2B61D3EA1B1CA2F900EB10B5 /* DecoRecipe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B61D4001B1CA2F900EB10B5 /* ManicuristTests */ = {
+		2B61D4001B1CA2F900EB10B5 /* DecoRecipeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B61D40E1B1CA2F900EB10B5 /* Build configuration list for PBXNativeTarget "ManicuristTests" */;
+			buildConfigurationList = 2B61D40E1B1CA2F900EB10B5 /* Build configuration list for PBXNativeTarget "DecoRecipeTests" */;
 			buildPhases = (
 				2B61D3FD1B1CA2F900EB10B5 /* Sources */,
 				2B61D3FE1B1CA2F900EB10B5 /* Frameworks */,
@@ -248,9 +248,9 @@
 			dependencies = (
 				2B61D4031B1CA2F900EB10B5 /* PBXTargetDependency */,
 			);
-			name = ManicuristTests;
+			name = DecoRecipeTests;
 			productName = DecoRecipeTests;
-			productReference = 2B61D4011B1CA2F900EB10B5 /* ManicuristTests.xctest */;
+			productReference = 2B61D4011B1CA2F900EB10B5 /* DecoRecipeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -272,7 +272,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B61D3E51B1CA2F800EB10B5 /* Build configuration list for PBXProject "Manicurist" */;
+			buildConfigurationList = 2B61D3E51B1CA2F800EB10B5 /* Build configuration list for PBXProject "DecoRecipe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -285,8 +285,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B61D3E91B1CA2F900EB10B5 /* Manicurist */,
-				2B61D4001B1CA2F900EB10B5 /* ManicuristTests */,
+				2B61D3E91B1CA2F900EB10B5 /* DecoRecipe */,
+				2B61D4001B1CA2F900EB10B5 /* DecoRecipeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,7 +346,7 @@
 /* Begin PBXTargetDependency section */
 		2B61D4031B1CA2F900EB10B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2B61D3E91B1CA2F900EB10B5 /* Manicurist */;
+			target = 2B61D3E91B1CA2F900EB10B5 /* DecoRecipe */;
 			targetProxy = 2B61D4021B1CA2F900EB10B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -471,7 +471,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_NAME = Manicurist;
+				PRODUCT_NAME = DecoRecipe;
 				SWIFT_OBJC_BRIDGING_HEADER = "DecoRecipe/Manicurist-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -495,7 +495,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_NAME = Manicurist;
+				PRODUCT_NAME = DecoRecipe;
 				SWIFT_OBJC_BRIDGING_HEADER = "DecoRecipe/Manicurist-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -515,7 +515,7 @@
 				);
 				INFOPLIST_FILE = DecoRecipeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = ManicuristTests;
+				PRODUCT_NAME = DecoRecipeTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DecoRecipe.app/DecoRecipe";
 			};
 			name = Debug;
@@ -530,7 +530,7 @@
 				);
 				INFOPLIST_FILE = DecoRecipeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = ManicuristTests;
+				PRODUCT_NAME = DecoRecipeTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DecoRecipe.app/DecoRecipe";
 			};
 			name = Release;
@@ -538,7 +538,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B61D3E51B1CA2F800EB10B5 /* Build configuration list for PBXProject "Manicurist" */ = {
+		2B61D3E51B1CA2F800EB10B5 /* Build configuration list for PBXProject "DecoRecipe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B61D4091B1CA2F900EB10B5 /* Debug */,
@@ -547,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B61D40B1B1CA2F900EB10B5 /* Build configuration list for PBXNativeTarget "Manicurist" */ = {
+		2B61D40B1B1CA2F900EB10B5 /* Build configuration list for PBXNativeTarget "DecoRecipe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B61D40C1B1CA2F900EB10B5 /* Debug */,
@@ -556,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B61D40E1B1CA2F900EB10B5 /* Build configuration list for PBXNativeTarget "ManicuristTests" */ = {
+		2B61D40E1B1CA2F900EB10B5 /* Build configuration list for PBXNativeTarget "DecoRecipeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B61D40F1B1CA2F900EB10B5 /* Debug */,
