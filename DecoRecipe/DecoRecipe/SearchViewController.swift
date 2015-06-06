@@ -28,6 +28,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         if row > 2{row = 0}
         cell.image.image = UIImage(named: "nail"+"\(row)"+".jpg")
         cell.backgroundColor = UIColor.whiteColor()
+        
         return cell
     }
     
