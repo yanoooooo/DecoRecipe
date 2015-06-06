@@ -16,10 +16,11 @@ class ManicuristViewController: UIViewController{
     @IBOutlet weak var nailImg: UIImageView!
     
     //animation
-    var palletView: UIImageView!
-    var animator : UIDynamicAnimator!
-    var continuousPush : UIPushBehavior!
-    var instantaneousPush : UIPushBehavior!
+    var BaseView: UIImageView!
+    
+    
+    //flg
+    var Baseflg: Bool = false
     
     //SelecNailViewControllerからの引数
     var _second:String = ""
@@ -32,47 +33,49 @@ class ManicuristViewController: UIViewController{
         nailImg.image = UIImage(named: _second)
         
         //UIImageView
-        palletView = UIImageView(frame: CGRectMake(0,400,500,120))
+        BaseView = UIImageView(frame: CGRectMake(500,400,500,120))
         
         //color
-        palletView.backgroundColor = UIColor.blackColor()
-        
-        // UIDynamiAnimatorの生成とインスタンスの保存.
-        animator = UIDynamicAnimator(referenceView: self.view)
-        
-        // UIViewを等加速度運動で動かすUIPushBehaviorを生成.
-        continuousPush = UIPushBehavior(items: [palletView], mode: UIPushBehaviorMode.Continuous)
-        continuousPush.pushDirection = CGVectorMake(-1.0, 0.0)
-        
-        // UIViewを等速運動で動かすUIPushBehaviorを生成.
-        instantaneousPush = UIPushBehavior(items: [palletView], mode: UIPushBehaviorMode.Instantaneous)
-        instantaneousPush.pushDirection = CGVector(dx: -1.0, dy: 0.0)
+        BaseView.backgroundColor = UIColor(red: 3/255, green: 195/255, blue: 201/255, alpha: 1.0)
         
         //add view
-        self.view.addSubview(palletView)
+        self.view.addSubview(BaseView)
         
     }
     
     
     @IBAction func BasebtnPush(sender: UIButton) {
-        animator.addBehavior(continuousPush)
+        //btn on
+        if !Baseflg{
+            Baseflg=true
+            BaseViewOn()
+        }
+        else{
+            Baseflg=false
+            BaseViewOff()
+        }
+        
     }
     
-    /*
-    Buttonが押されたときに呼ばれるメソッド.
-    */
-    func onClickMyButton(sender : UIButton){
-        
-        switch(sender.tag){
-        case 1:
-            animator.addBehavior(continuousPush)
-            
-        case 2:
-            animator.addBehavior(instantaneousPush)
-            
-        default:
-            println("Error")
-        }
+    //Baseview
+    private func BaseViewOn(){
+        // アニメーション処理
+        UIView.animateWithDuration(NSTimeInterval(CGFloat(0.5)),
+            animations: {() -> Void in
+                // 移動先の座標を指定する.
+                self.BaseView.center = CGPoint(x: 250,y: 460);
+            }, completion: {(Bool) -> Void in
+        })
+    }
+    
+    private func BaseViewOff(){
+        // アニメーション処理
+        UIView.animateWithDuration(NSTimeInterval(CGFloat(0.5)),
+            animations: {() -> Void in
+                // 移動先の座標を指定する.
+                self.BaseView.center = CGPoint(x: 500,y: 460);
+            }, completion: {(Bool) -> Void in
+        })
     }
     
 }
