@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2B61D3F01B1CA2F900EB10B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61D3EF1B1CA2F900EB10B5 /* AppDelegate.swift */; };
 		2B61D3F21B1CA2F900EB10B5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61D3F11B1CA2F900EB10B5 /* SearchViewController.swift */; };
-		2B61D3F41B1CA2F900EB10B5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61D3F31B1CA2F900EB10B5 /* SecondViewController.swift */; };
 		2B61D3F71B1CA2F900EB10B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B61D3F51B1CA2F900EB10B5 /* Main.storyboard */; };
 		2B61D3F91B1CA2F900EB10B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B61D3F81B1CA2F900EB10B5 /* Images.xcassets */; };
 		2B61D3FC1B1CA2F900EB10B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B61D3FA1B1CA2F900EB10B5 /* LaunchScreen.xib */; };
@@ -29,6 +28,18 @@
 		2BF305211B22A1F100F0157F /* g_round.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF3051F1B22A1F100F0157F /* g_round.png */; };
 		2BF305231B22BB0200F0157F /* nail0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BF305221B22BB0200F0157F /* nail0.jpg */; };
 		2BF305251B22C12000F0157F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF305241B22C12000F0157F /* DetailViewController.swift */; };
+		2BF305271B22D38800F0157F /* ManicuristViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF305261B22D38800F0157F /* ManicuristViewController.swift */; };
+		2BF3052D1B22DB5F00F0157F /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF305291B22DB5F00F0157F /* icon1.png */; };
+		2BF3052E1B22DB5F00F0157F /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF3052A1B22DB5F00F0157F /* icon2.png */; };
+		2BF3052F1B22DB5F00F0157F /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF3052B1B22DB5F00F0157F /* icon3.png */; };
+		2BF305301B22DB5F00F0157F /* icon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF3052C1B22DB5F00F0157F /* icon4.png */; };
+		2BF305341B22E2D000F0157F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF305331B22E2D000F0157F /* TabBarView.swift */; };
+		2BF3053A1B22EC1300F0157F /* select_nail1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF305371B22EC1300F0157F /* select_nail1.png */; };
+		2BF3053B1B22EC1300F0157F /* select_nail2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF305381B22EC1300F0157F /* select_nail2.png */; };
+		2BF3053C1B22EC1300F0157F /* select_nail3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF305391B22EC1300F0157F /* select_nail3.png */; };
+		2BF3053E1B22EC1A00F0157F /* select_words.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF3053D1B22EC1A00F0157F /* select_words.png */; };
+		2BF305401B22F45700F0157F /* SelectNailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3053F1B22F45700F0157F /* SelectNailViewController.swift */; };
+		2BF305421B22F86300F0157F /* NailDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF305411B22F86300F0157F /* NailDataUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +57,6 @@
 		2B61D3EE1B1CA2F900EB10B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B61D3EF1B1CA2F900EB10B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B61D3F11B1CA2F900EB10B5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		2B61D3F31B1CA2F900EB10B5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2B61D3F61B1CA2F900EB10B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B61D3F81B1CA2F900EB10B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B61D3FB1B1CA2F900EB10B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -69,6 +79,18 @@
 		2BF3051F1B22A1F100F0157F /* g_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = g_round.png; sourceTree = "<group>"; };
 		2BF305221B22BB0200F0157F /* nail0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nail0.jpg; sourceTree = "<group>"; };
 		2BF305241B22C12000F0157F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2BF305261B22D38800F0157F /* ManicuristViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManicuristViewController.swift; sourceTree = "<group>"; };
+		2BF305291B22DB5F00F0157F /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		2BF3052A1B22DB5F00F0157F /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		2BF3052B1B22DB5F00F0157F /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		2BF3052C1B22DB5F00F0157F /* icon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon4.png; sourceTree = "<group>"; };
+		2BF305331B22E2D000F0157F /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		2BF305371B22EC1300F0157F /* select_nail1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_nail1.png; sourceTree = "<group>"; };
+		2BF305381B22EC1300F0157F /* select_nail2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_nail2.png; sourceTree = "<group>"; };
+		2BF305391B22EC1300F0157F /* select_nail3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_nail3.png; sourceTree = "<group>"; };
+		2BF3053D1B22EC1A00F0157F /* select_words.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_words.png; sourceTree = "<group>"; };
+		2BF3053F1B22F45700F0157F /* SelectNailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectNailViewController.swift; sourceTree = "<group>"; };
+		2BF305411B22F86300F0157F /* NailDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NailDataUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +142,14 @@
 				2BCB2A1D1B1F4D6200F1DD2B /* Util */,
 				2B61D3EF1B1CA2F900EB10B5 /* AppDelegate.swift */,
 				2B61D3F11B1CA2F900EB10B5 /* SearchViewController.swift */,
-				2B61D3F31B1CA2F900EB10B5 /* SecondViewController.swift */,
 				2BCB2A191B1F459600F1DD2B /* DecoViewController.swift */,
+				2BF3053F1B22F45700F0157F /* SelectNailViewController.swift */,
 				2B61D3F51B1CA2F900EB10B5 /* Main.storyboard */,
 				2B61D3F81B1CA2F900EB10B5 /* Images.xcassets */,
 				2B61D3FA1B1CA2F900EB10B5 /* LaunchScreen.xib */,
 				2B61D3ED1B1CA2F900EB10B5 /* Supporting Files */,
 				2BF305241B22C12000F0157F /* DetailViewController.swift */,
+				2BF305261B22D38800F0157F /* ManicuristViewController.swift */,
 			);
 			path = DecoRecipe;
 			sourceTree = "<group>";
@@ -160,6 +183,8 @@
 		2BAA74151B21BA39008AC7D9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2BF305351B22EC0000F0157F /* manicurist */,
+				2BF305281B22DB3300F0157F /* icon */,
 				2BF3051B1B22997600F0157F /* guideline */,
 				2BF305121B22860300F0157F /* NailImages */,
 				2BAA74181B21C24C008AC7D9 /* DecoView */,
@@ -189,6 +214,7 @@
 			children = (
 				2BCB2A1B1B1F4D5600F1DD2B /* ImageUtil.swift */,
 				2BAA741B1B21CEAA008AC7D9 /* ColorUtil.swift */,
+				2BF305411B22F86300F0157F /* NailDataUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -197,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				2BF305191B22965300F0157F /* CustomCell.swift */,
+				2BF305331B22E2D000F0157F /* TabBarView.swift */,
 			);
 			name = UIView;
 			sourceTree = "<group>";
@@ -219,6 +246,36 @@
 				2BF3051C1B22998400F0157F /* g_square.png */,
 			);
 			name = guideline;
+			sourceTree = "<group>";
+		};
+		2BF305281B22DB3300F0157F /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				2BF305291B22DB5F00F0157F /* icon1.png */,
+				2BF3052A1B22DB5F00F0157F /* icon2.png */,
+				2BF3052B1B22DB5F00F0157F /* icon3.png */,
+				2BF3052C1B22DB5F00F0157F /* icon4.png */,
+			);
+			name = icon;
+			sourceTree = "<group>";
+		};
+		2BF305351B22EC0000F0157F /* manicurist */ = {
+			isa = PBXGroup;
+			children = (
+				2BF305361B22EC0700F0157F /* nailshape */,
+			);
+			name = manicurist;
+			sourceTree = "<group>";
+		};
+		2BF305361B22EC0700F0157F /* nailshape */ = {
+			isa = PBXGroup;
+			children = (
+				2BF3053D1B22EC1A00F0157F /* select_words.png */,
+				2BF305371B22EC1300F0157F /* select_nail1.png */,
+				2BF305381B22EC1300F0157F /* select_nail2.png */,
+				2BF305391B22EC1300F0157F /* select_nail3.png */,
+			);
+			name = nailshape;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,9 +366,17 @@
 				2BAA741A1B21C2FB008AC7D9 /* base.png in Resources */,
 				2BF305161B2286CC00F0157F /* nail2.jpg in Resources */,
 				2BF305201B22A1F100F0157F /* g_oval.png in Resources */,
+				2BF3053C1B22EC1300F0157F /* select_nail3.png in Resources */,
 				2BF3051D1B22998400F0157F /* g_square.png in Resources */,
+				2BF3053B1B22EC1300F0157F /* select_nail2.png in Resources */,
+				2BF3052D1B22DB5F00F0157F /* icon1.png in Resources */,
+				2BF3053E1B22EC1A00F0157F /* select_words.png in Resources */,
+				2BF3052F1B22DB5F00F0157F /* icon3.png in Resources */,
+				2BF3053A1B22EC1300F0157F /* select_nail1.png in Resources */,
 				2BF305211B22A1F100F0157F /* g_round.png in Resources */,
 				2B61D3F91B1CA2F900EB10B5 /* Images.xcassets in Resources */,
+				2BF3052E1B22DB5F00F0157F /* icon2.png in Resources */,
+				2BF305301B22DB5F00F0157F /* icon4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF305251B22C12000F0157F /* DetailViewController.swift in Sources */,
-				2B61D3F41B1CA2F900EB10B5 /* SecondViewController.swift in Sources */,
+				2BF305421B22F86300F0157F /* NailDataUtil.swift in Sources */,
 				2BCB2A1C1B1F4D5600F1DD2B /* ImageUtil.swift in Sources */,
 				2BCB2A1A1B1F459600F1DD2B /* DecoViewController.swift in Sources */,
 				2BF3051A1B22965300F0157F /* CustomCell.swift in Sources */,
@@ -338,6 +403,9 @@
 				2B61D3F01B1CA2F900EB10B5 /* AppDelegate.swift in Sources */,
 				2BAA74261B21D7AA008AC7D9 /* CVUtil.mm in Sources */,
 				2B61D3F21B1CA2F900EB10B5 /* SearchViewController.swift in Sources */,
+				2BF305341B22E2D000F0157F /* TabBarView.swift in Sources */,
+				2BF305401B22F45700F0157F /* SelectNailViewController.swift in Sources */,
+				2BF305271B22D38800F0157F /* ManicuristViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
