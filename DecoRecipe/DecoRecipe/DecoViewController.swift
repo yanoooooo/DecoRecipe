@@ -12,6 +12,10 @@ import AVFoundation
 class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var guideImg: UIImageView!
+    
+    var partsImgView: UIImageView!
+    var partsImg: UIImage!
+    
     // セッション.
     var mySession : AVCaptureSession!
     // デバイス.
@@ -31,6 +35,28 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
             // 撮影開始
             mySession.startRunning()
         }
+        
+        //ガイドラインの画像の設定
+        self.guideImg.image = UIImage(named: "g_square.png")
+        
+        //最初のパーツの設定
+        // UIImageViewを作成する.
+        partsImgView = UIImageView(frame: guideImg.frame)
+        
+        // 表示する画像を設定する.
+        partsImg = UIImage(named: "base.png")
+        
+        // 画像をUIImageViewに設定する.
+        partsImgView.image = partsImg
+        
+        // 画像の表示する座標を指定する.
+        partsImgView.layer.position = CGPoint(x: guideImg.frame.origin.x+guideImg.frame.size.width/2, y: guideImg.frame.origin.y+guideImg.frame.size.height/2)
+        
+        //alpha
+        partsImgView.alpha = 0.5;
+        
+        // UIImageViewをViewに追加する.
+        self.view.addSubview(partsImgView)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -132,13 +158,13 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
             self.mainImg.image = ImageUtil.imageFromSampleBuffer(sampleBuffer)
             
             //ガイドライン内を切り抜く
-            self.guideImg.image = ImageUtil.clipImg(self.mainImg.image!, rect: self.guideImg.frame)
+            self.partsImgView.image = ImageUtil.clipImg(self.mainImg.image!, rect: self.partsImgView.frame)
             
             //切り抜いた画像を１色にする
-            self.guideImg.image = CVUtil.reduceColor(self.guideImg.image)
+            self.partsImgView.image = CVUtil.reduceColor(self.partsImgView.image)
             
             //切り抜いた１色とガイドラインのRGB値を比較する
-            ColorUtil.compareColor(ColorUtil.getPixelColorFromUIImage(self.guideImg.image!, pos: CGPoint(x: 0,y: 0)), rgb2: UIColor(red: 248/255, green: 21/255, blue: 60/255, alpha: 255/255))
+            ColorUtil.compareColor(ColorUtil.getPixelColorFromUIImage(self.partsImgView.image!, pos: CGPoint(x: 0,y: 0)), rgb2: UIColor(red: 248/255, green: 21/255, blue: 60/255, alpha: 255/255))
             
         })
     }
