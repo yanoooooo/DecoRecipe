@@ -10,9 +10,14 @@ import UIKit
 
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var myCollectionView: UICollectionView!
+    let datamodel =  NailDataUtil()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //データをセット(最初だけでいい)
+        datamodel.setPlistData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,9 +29,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell:CustomCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CustomCell
         var row: Int = indexPath.row
-        cell.title.text = String("NailName:"+"\(row)")
+        var datanume: String = String(row)
+        
+        cell.title.text = String(datamodel.getNailData("data"+datanume).name)
         if row > 2{row = 0}
-        cell.image.image = UIImage(named: "nail"+"\(row)"+".jpg")
+        cell.image.image = UIImage(named: datamodel.getNailData("data"+datanume).image)
         cell.backgroundColor = UIColor.whiteColor()
         
         return cell

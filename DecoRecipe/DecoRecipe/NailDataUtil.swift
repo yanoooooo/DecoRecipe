@@ -24,7 +24,7 @@ class NailDataUtil: NSObject {
     //var recipiInfo: Dictionary = ["image":"","red":0.0,"green":0.0,"blue":0.0,"alpha":0.0]
     
     //plistからデータを取り出す関数
-    func getPlistData()
+    func setPlistData()
     {
         // データを用意
         let itemData = ["name":"シャネル","price":"3000円","image":"ががががが"]
@@ -35,8 +35,12 @@ class NailDataUtil: NSObject {
         let recipi3 = ["image":"nail2.jpg","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
         
         //データ入れる
-        let saveData = ["time":"30分","name": "フレンチネイル", "description": "初心者おすすめ！", "image": "nail01.jpg","nail":itemData,"fude":itemData2,"stone":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
+        let saveData = ["time":"30分","name": "MYM❤︎", "description": "初心者おすすめ！", "image": "nail0.jpg","nail":itemData,"fude":itemData2,"stone":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
+        let saveData2 = ["time":"500年","name": "フランス革命", "description": "革命を歌う！", "image": "nail1.jpg","nail":itemData,"fude":itemData2,"stone":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
+         let saveData3 = ["time":"40分","name": "インターネットワンダーランド", "description": "インターネットはワンダーランドだ！", "image": "nail2.jpg","nail":itemData,"fude":itemData2,"stone":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
         defaults.setObject(saveData, forKey: "data0")
+        defaults.setObject(saveData2, forKey: "data1")
+        defaults.setObject(saveData3, forKey: "data2")
         defaults.synchronize()
         
     }
@@ -73,7 +77,7 @@ class NailDataUtil: NSObject {
     *return nailName, nailImage,naildesc
     **/
     
-    func getNailData(id : String)-> (String,String,String)
+    func getNailData(id : String)-> (name:String,image:String,desc:String)
     {
         if let data = defaults.dictionaryForKey(id)
         {
@@ -111,7 +115,7 @@ class NailDataUtil: NSObject {
     *return (image,name,price)
     */
 
-    func getNailItemData(id : String,itemName:String)-> (String,String,String)
+    func getNailItemData(id : String,itemName:String)-> (image:String,name:String,price:String)
     {
         if let data = defaults.dictionaryForKey(id)
         {
