@@ -10,10 +10,17 @@ import UIKit
 
 class DetailViewController:UIViewController, UIScrollViewDelegate{
     
+    
     @IBOutlet weak var itemScroll: UIScrollView!
     var itemPageCtrl: UIPageControl!
     
+    @IBOutlet weak var name: UILabel!
+    
+    //ネイルデータモデル
+    let datamodel =  NailDataUtil()
+    
     override func viewDidLoad() {
+        name.text = "aaa"
         
         // ページ数を定義する.
         let pageSize = 4
