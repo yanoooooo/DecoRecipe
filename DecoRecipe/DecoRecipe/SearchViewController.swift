@@ -23,8 +23,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     // MARK: - UICollectionViewDelegate Protocol
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell:CustomCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CustomCell
-        cell.title.text = "NailName";
-        cell.image.image = UIImage(named: "nail01.jpg")
+        var row: Int = indexPath.row
+        cell.title.text = String("NailName:"+"\(row)")
+        if row > 2{row = 0}
+        cell.image.image = UIImage(named: "nail"+"\(row)"+".jpg")
         cell.backgroundColor = UIColor.whiteColor()
         return cell
     }
@@ -34,7 +36,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20;
+        return 10;
     }
 
 
