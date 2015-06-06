@@ -21,57 +21,111 @@ class NailDataUtil: NSObject {
     //データ用の配列を生成
     var recipiSizde: Int = 0
     
+    //var recipiInfo: Dictionary = ["image":"","red":0.0,"green":0.0,"blue":0.0,"alpha":0.0]
     
     //plistからデータを取り出す関数
     func getPlistData()
     {
-        // データを用意して保存
-        let itemData = ["マニュキュア":"シャネル","筆":"細め"]
-        let f: Float = Float(100)
+        // データを用意
+        let itemData = ["name":"シャネル","price":"3000円","image":"ががががが"]
+        let itemData2 = ["name":"ネイル工房オリジナルジェルネイルブラシ","price":"1000円","image":"ががががが"]
+        let itemData3 = ["name":"ストーン","price":"500円","image":"ががががが"]
         let recipi1 = ["image":"nail0.jpg","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
         let recipi2 = ["image":"nail1.jpg","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
         let recipi3 = ["image":"nail2.jpg","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
-
         
-        let recipi = ["1":recipi1,"2":recipi2,"3":recipi3]
-        let saveData = ["name": "フレンチネイル", "description": "初心者おすすめ！", "image": "nail01.jpg","item":itemData,"recipi":recipi]
+        //データ入れる
+        let saveData = ["time":"30分","name": "フレンチネイル", "description": "初心者おすすめ！", "image": "nail01.jpg","nail":itemData,"fude":itemData2,"stone":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
         defaults.setObject(saveData, forKey: "data0")
         defaults.synchronize()
         
-        let key = "data0"
-        // 再度読み出し
-        /*if let readDict = defaults.objectForKey(key) as? [String: String] {
-            let readData2: String! = readDict["name"]
-            let readData3: String! = readDict["description"]
-            let readData4: String! = readDict["image"]
-            let readData5: String! = readDict["item"]
-            println("Data of key2 = (readData2)")
-            println("result : " + readData2)
-            println("Data of key3 = (readData3)")
-            println("Data of key4 = (readData4)")
-            println("Data of key5 = (readData5)")
-        } else {
-            println("No such Data")
-        }*/
+    }
     
-        if let name = defaults.dictionaryForKey("data0")
-        {
-            println(name)
-            if let job = name["item"] {
-                println(job["マニュキュア"])
-            }
-            
-            if let job = name["recipi"] {
-                println(job["1"])
-            }
-
-        }
+    /**
+    *レシピデータを返す関数
+    *param　データid 
+    *param レシピnum
+    *return image, red,blue,green,alpha    
+    **/
+    
+    func getRecipiData( id : String ,recipiNum:String) -> (String, Float, Float, Float, Float){
         
+        if let name = defaults.dictionaryForKey(id)
+        {
+        
+            if let recipi = name[recipiNum]{
+                var image:String = recipi["image"] as! String
+                var alpha:Float = recipi["alpha"] as! Float
+                var red:Float = recipi["red"] as! Float
+                var blue:Float = recipi["blue"] as! Float
+                var green:Float = recipi["green"] as! Float
+
+                return (image, red,blue,green,alpha)
+            }
+        }
+         return ("", 0, 0,0,0)
     }
     
     
+    /**
+    *ネイルデータを返す関数
+    *param　データid
+    *return nailName, nailImage,naildesc
+    **/
     
+    func getNailData(id : String)-> (String,String,String)
+    {
+        if let data = defaults.dictionaryForKey(id)
+        {
+            var nailName:String = data["name"] as! String
+            var nailImage:String = data["image"] as! String
+            var naildesc:String = data["description"] as! String
+            return (nailName, nailImage,naildesc)
+
+        }
+        return ("","","")
+    }
     
+    /**
+    *ネイル詳細データを返す関数
+    *param　データid
+    *return nailName, nailImage,nailTime    
+    **/
+    
+    func getNeilDetailData(id : String)-> (String,String,String)
+    {
+        if let data = defaults.dictionaryForKey(id)
+        {
+            var nailName:String = data["name"] as! String
+            var nailImage:String = data["image"] as! String
+            var nailTime:String = data["time"] as! String
+            return (nailName, nailImage,nailTime)
+            
+        }
+        return ("","","")
+    }
+    
+    /*
+    *アイテム情報を取得する関数
+    *param レシピID　itemname(nail fude stone のどれか)
+    *return (image,name,price)
+    */
+
+    func getNailItemData(id : String,itemName:String)-> (String,String,String)
+    {
+        if let data = defaults.dictionaryForKey(id)
+        {
+            
+            if let item = data[itemName]{
+                var image:String = item["image"] as! String
+                var name:String = item["price"] as! String
+                var price:String = item["name"] as! String
+                return (image,name,price)
+            }
+        }
+        return ("","","")
+    }
+
     
     
     
