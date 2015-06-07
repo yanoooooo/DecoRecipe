@@ -38,9 +38,9 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
     let kAnimationDuration = 1.0
     let kParticleName = "NextParticle"
     
-    /*var skView: SKView!
-    var isAnimating: Bool = false
-    var isFavorite: Bool = false*/
+//  var skView: SKView!
+// var isAnimating: Bool = false
+// var isFavorite: Bool = false
     
     
     override func viewDidLoad() {
@@ -326,7 +326,7 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
     }
     
     //animation
-    /*private func showParticle(particle: SKNode , completion: () -> Void = {}) {
+   /* private func showParticle(particle: SKNode , completion: () -> Void = {}) {
         particle.alpha = 1
         let fadeout = SKAction.fadeOutWithDuration(kAnimationDuration)
         particle.runAction(fadeout, completion: {
