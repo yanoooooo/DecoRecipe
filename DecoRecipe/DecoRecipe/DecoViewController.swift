@@ -31,6 +31,9 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
 
     var recipiNum : Int = 1
     
+    //guid color
+    var guideColor:UILabel!
+    
     //animation
     let kAnimationDuration = 1.0
     let kParticleName = "NextParticle"
@@ -95,6 +98,17 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         // UIImageViewをViewに追加する.
         self.view.addSubview(partsImgView)
         
+        //guide color
+        guideColor = UILabel(frame: CGRect(x: 20, y: 80, width: 80, height: 80))
+        guideColor.backgroundColor = UIColor.blackColor()
+        guideColor.textColor = UIColor.whiteColor()
+        guideColor.textAlignment = NSTextAlignment.Center
+        guideColor.layer.masksToBounds = true
+        
+        guideColor.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
+        guideColor.layer.cornerRadius = 40.0
+        
+        self.view.addSubview(guideColor)
         
         //loadParticle()
     }
@@ -243,6 +257,11 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
             //切り抜いた１色とガイドラインのRGB値を比較する
             //ColorUtil.compareColor(ColorUtil.getPixelColorFromUIImage(dstImg, pos: CGPoint(x: 0,y: 0)), rgb2: UIColor(red: 248/255, green: 21/255, blue: 60/255, alpha: 255/255))
             self.checkColor( ColorUtil.compareColor(ColorUtil.getPixelColorFromUIImage(dstImg, pos: CGPoint(x: 0,y: 0)), rgb2:UIColor(red: redNum/255, green: greenNum/255, blue: blueNum/255, alpha: alphaNum/255)))
+            
+            /*let selectedImage: UIImage = self.partsImgView.image!.imageWithRenderingMode(.AlwaysTemplate)
+            self.partsImgView.image = selectedImage
+            self.partsImgView.tintColor = UIColor(red: redNum/255, green: greenNum/255, blue: blueNum/255, alpha: alphaNum)*/
+            self.guideColor.backgroundColor = UIColor(red: redNum/255, green: greenNum/255, blue: blueNum/255, alpha: alphaNum)
 
         })
     }
