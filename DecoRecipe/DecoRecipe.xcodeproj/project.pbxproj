@@ -40,6 +40,7 @@
 		2BF3053E1B22EC1A00F0157F /* select_words.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF3053D1B22EC1A00F0157F /* select_words.png */; };
 		2BF305401B22F45700F0157F /* SelectNailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF3053F1B22F45700F0157F /* SelectNailViewController.swift */; };
 		2BF305421B22F86300F0157F /* NailDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF305411B22F86300F0157F /* NailDataUtil.swift */; };
+		2BF305451B23159700F0157F /* bottombar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF305441B23159700F0157F /* bottombar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		2BF3053D1B22EC1A00F0157F /* select_words.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_words.png; sourceTree = "<group>"; };
 		2BF3053F1B22F45700F0157F /* SelectNailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectNailViewController.swift; sourceTree = "<group>"; };
 		2BF305411B22F86300F0157F /* NailDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NailDataUtil.swift; sourceTree = "<group>"; };
+		2BF305441B23159700F0157F /* bottombar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottombar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 		2BF305351B22EC0000F0157F /* manicurist */ = {
 			isa = PBXGroup;
 			children = (
+				2BF305431B23158D00F0157F /* menu */,
 				2BF305361B22EC0700F0157F /* nailshape */,
 			);
 			name = manicurist;
@@ -276,6 +279,14 @@
 				2BF305391B22EC1300F0157F /* select_nail3.png */,
 			);
 			name = nailshape;
+			sourceTree = "<group>";
+		};
+		2BF305431B23158D00F0157F /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				2BF305441B23159700F0157F /* bottombar.png */,
+			);
+			name = menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 				2BF305231B22BB0200F0157F /* nail0.jpg in Resources */,
 				2BF305141B2286C400F0157F /* nail1.jpg in Resources */,
 				2B61D3FC1B1CA2F900EB10B5 /* LaunchScreen.xib in Resources */,
+				2BF305451B23159700F0157F /* bottombar.png in Resources */,
 				2BAA741A1B21C2FB008AC7D9 /* base.png in Resources */,
 				2BF305161B2286CC00F0157F /* nail2.jpg in Resources */,
 				2BF305201B22A1F100F0157F /* g_oval.png in Resources */,
