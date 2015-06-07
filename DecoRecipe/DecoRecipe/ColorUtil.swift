@@ -28,6 +28,7 @@ class ColorUtil{
         rgb1.getRed(&red1, green: &green1, blue: &blue1, alpha: &alpha1)
         rgb2.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2)
         
+        
         //red
         var comp:CGFloat = red1-red2
         if comp > -val && comp < val {
@@ -42,9 +43,9 @@ class ColorUtil{
         
         //println( "R:\(red1) G:\(green1) B:\(blue1) a:\(alpha1)" )
         //println( "R:\(red2) G:\(green2) B:\(blue2) a:\(alpha2)" )
-        println(tof)
+       // println(tof)
         
-        return true
+        return tof
     }
     
     //CGPointに含まれる色データをUIImageから取得して返す

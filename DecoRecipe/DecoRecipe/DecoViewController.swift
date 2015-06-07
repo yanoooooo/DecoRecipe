@@ -24,6 +24,12 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
     // 出力先
     var myOutput : AVCaptureVideoDataOutput!
     
+    //ネイルデータクラス
+    let datamodel =  NailDataUtil.sharedInstance
+
+    var recipiNum : Int = 1
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //device light
@@ -37,14 +43,20 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         }
         
         //ガイドラインの画像の設定
-        self.guideImg.image = UIImage(named: "g_square.png")
+        //self.guideImg.image = UIImage(named: "g_square.png")
+
+        //該当レシピのガイド画像の設定
+        self.guideImg.image = UIImage(named:datamodel.getNeilDetailData("data"+datamodel.selectedNum).guide)
         
         //最初のパーツの設定
         // UIImageViewを作成する.
         partsImgView = UIImageView(frame: guideImg.frame)
         
+        //レシピの画像を表示する
         // 表示する画像を設定する.
-        partsImg = UIImage(named: "base.png")
+        //partsImg = UIImage(named: "oval02_black.png")
+        var recipiTextNum:String = String(self.recipiNum)
+        partsImg = UIImage(named: datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).image)
         
         // 画像をUIImageViewに設定する.
         partsImgView.image = partsImg
@@ -53,7 +65,7 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         partsImgView.layer.position = CGPoint(x: guideImg.frame.origin.x+guideImg.frame.size.width/2, y: guideImg.frame.origin.y+guideImg.frame.size.height/2)
         
         //alpha
-        partsImgView.alpha = 0.5;
+        partsImgView.alpha = 0.1;
         
         // UIImageViewをViewに追加する.
         self.view.addSubview(partsImgView)
@@ -154,19 +166,55 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!)
     {
         dispatch_async(dispatch_get_main_queue(), {
+            
             // UIImageへ変換して表示させる
             self.mainImg.image = ImageUtil.imageFromSampleBuffer(sampleBuffer)
             
             //ガイドライン内を切り抜く
-            self.partsImgView.image = ImageUtil.clipImg(self.mainImg.image!, rect: self.partsImgView.frame)
+            var dstImg: UIImage = ImageUtil.clipImg(self.mainImg.image!, rect: self.partsImgView.frame)
             
             //切り抜いた画像を１色にする
-            self.partsImgView.image = CVUtil.reduceColor(self.partsImgView.image)
+            dstImg = CVUtil.reduceColor(dstImg)
             
+            
+            //今のレシピの画像のRGB+alphaを取得する
+            var recipiTextNum:String = String(self.recipiNum)
+            var redNum:CGFloat = self.datamodel.getRecipiData("data"+self.datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).red
+            var blueNum:CGFloat = self.datamodel.getRecipiData("data"+self.datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).blue
+            var greenNum:CGFloat = self.datamodel.getRecipiData("data"+self.datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).green
+            var alphaNum:CGFloat = self.datamodel.getRecipiData("data"+self.datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).alpha
+           
             //切り抜いた１色とガイドラインのRGB値を比較する
-            ColorUtil.compareColor(ColorUtil.getPixelColorFromUIImage(self.partsImgView.image!, pos: CGPoint(x: 0,y: 0)), rgb2: UIColor(red: 248/255, green: 21/255, blue: 60/255, alpha: 255/255))
-            
+            //ColorUtil.compareColor(ColorUtil.getPixelColorFromUIImage(dstImg, pos: CGPoint(x: 0,y: 0)), rgb2: UIColor(red: 248/255, green: 21/255, blue: 60/255, alpha: 255/255))
+            self.checkColor( ColorUtil.compareColor(ColorUtil.getPixelColorFromUIImage(dstImg, pos: CGPoint(x: 0,y: 0)), rgb2:UIColor(red: redNum/255, green: greenNum/255, blue: blueNum/255, alpha: alphaNum/255)))
+
         })
+    }
+    
+    func checkColor(value:Bool)
+    {
+    
+        if(value == true)
+        {
+            println("一致")
+            recipiNum = recipiNum+1
+            var recipiTextNum:String = String(self.recipiNum)
+            partsImg = UIImage(named: datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).image)
+            // 画像をUIImageViewに設定する.
+            partsImgView.image = partsImg
+            
+            // 画像の表示する座標を指定する.
+            partsImgView.layer.position = CGPoint(x: guideImg.frame.origin.x+guideImg.frame.size.width/2, y: guideImg.frame.origin.y+guideImg.frame.size.height/2)
+            
+            //alpha
+            partsImgView.alpha = 0.1;
+            
+            // UIImageViewをViewに追加する.
+            self.view.addSubview(partsImgView)
+
+
+        }
+
     }
     
 }

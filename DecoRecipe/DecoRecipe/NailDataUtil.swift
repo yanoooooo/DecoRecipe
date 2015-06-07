@@ -30,9 +30,9 @@ class NailDataUtil: NSObject {
     //データ用の配列を生成
     var recipiSizde: Int = 0
     
-    //選択しているデータの数
+    //選択しているデータのナンバー
     var selectedNum = ""
-
+   
    
     //var recipiInfo: Dictionary = ["image":"","red":0.0,"green":0.0,"blue":0.0,"alpha":0.0]
     
@@ -43,14 +43,14 @@ class NailDataUtil: NSObject {
         let itemData = ["name":"シャネル","price":"3000円","image":"ががががが"]
         let itemData2 = ["name":"ネイル工房オリジナルジェルネイルブラシ","price":"1000円","image":"ががががが"]
         let itemData3 = ["name":"ストーン","price":"500円","image":"ががががが"]
-        let recipi1 = ["image":"nail0.jpg","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
-        let recipi2 = ["image":"nail1.jpg","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
-        let recipi3 = ["image":"nail2.jpg","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
+        let recipi1 = ["image":"oval02_black.png","red":248,"green":21,"blue": 60,"alpha":1.0]
+        let recipi2 = ["image":"oval02_pink.png","red":79.0,"green":255,"blue":255,"alpha":1.0]
+        let recipi3 = ["image":"oval01.png","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
         
         //データ入れる
-        let saveData = ["time":"30分","name": "MYM❤︎", "description": "初心者おすすめ！", "image": "nail0.jpg","item0":itemData,"item1":itemData2,"item3":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
-        let saveData2 = ["time":"500年","name": "フランス革命", "description": "革命を歌う！", "image": "nail1.jpg","item0":itemData,"item1":itemData2,"item3":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
-         let saveData3 = ["time":"40分","name": "インターネットワンダーランド", "description": "インターネットはワンダーランドだ！", "image": "nail2.jpg","item0":itemData,"item1":itemData2,"item2":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
+        let saveData = ["time":"30分","name": "MYM❤︎", "description": "初心者おすすめ！", "image": "nail0.jpg","item0":itemData,"item1":itemData2,"item3":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3,"guideLine":"g_oval.png"]
+        let saveData2 = ["time":"500年","name": "フランス革命", "description": "革命を歌う！", "image": "nail1.jpg","item0":itemData,"item1":itemData2,"item3":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3,"guideLine":"g_round.png"]
+        let saveData3 = ["time":"40分","name": "インターネットワンダーランド", "description": "インターネットはワンダーランドだ！", "image": "nail2.jpg","item0":itemData,"item1":itemData2,"item2":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3,"guideLine":"g_square.png"]
         defaults.setObject(saveData, forKey: "data0")
         defaults.setObject(saveData2, forKey: "data1")
         defaults.setObject(saveData3, forKey: "data2")
@@ -65,22 +65,22 @@ class NailDataUtil: NSObject {
     *return image, red,blue,green,alpha    
     **/
     
-    func getRecipiData( id : String ,recipiNum:String) -> (String, Float, Float, Float, Float){
+    func getRecipiData( id : String ,recipiNum:String) -> (image:String, red:CGFloat, blue:CGFloat, green:CGFloat, alpha:CGFloat){
         
         if let name = defaults.dictionaryForKey(id)
         {
         
             if let recipi = name[recipiNum]{
                 var image:String = recipi["image"] as! String
-                var alpha:Float = recipi["alpha"] as! Float
-                var red:Float = recipi["red"] as! Float
-                var blue:Float = recipi["blue"] as! Float
-                var green:Float = recipi["green"] as! Float
-
-                return (image, red,blue,green,alpha)
+                var alpha:CGFloat = recipi["alpha"] as! CGFloat
+                var red:CGFloat = recipi["red"] as! CGFloat
+                var blue:CGFloat = recipi["blue"] as! CGFloat
+                var green:CGFloat = recipi["green"] as! CGFloat
+        
+                return (image,red,blue,green,alpha)
             }
         }
-         return ("", 0, 0,0,0)
+         return ("", 0,0,0,0)
     }
     
     
@@ -106,20 +106,21 @@ class NailDataUtil: NSObject {
     /**
     *ネイル詳細データを返す関数
     *param　データid
-    *return nailName, nailImage,nailTime    
+    *return nailName, nailImage,nailTime,nailGuidLine
     **/
     
-    func getNeilDetailData(id : String)-> (name:String,image:String,time:String)
+    func getNeilDetailData(id : String)-> (name:String,image:String,time:String,guide:String)
     {
         if let data = defaults.dictionaryForKey(id)
         {
             var nailName:String = data["name"] as! String
             var nailImage:String = data["image"] as! String
             var nailTime:String = data["time"] as! String
-            return (nailName, nailImage,nailTime)
+            var nailGuidLine:String = data["guideLine"] as! String
+            return (nailName, nailImage,nailTime,nailGuidLine)
             
         }
-        return ("","","")
+        return ("","","","")
     }
     
     /*
@@ -145,19 +146,11 @@ class NailDataUtil: NSObject {
 
 
     /**
-    *選択しているアイテムID
+    *選択しているアイテムIDをセット
     */
     func setSelectedItemId(num:String)
     {
         self.selectedNum = num
            }
 
-    /**
-    *選択しているアイテムID
-    */
-    func getSelectedItemId()->(String)
-    {
-        return self.selectedNum
-        
     }
-}
