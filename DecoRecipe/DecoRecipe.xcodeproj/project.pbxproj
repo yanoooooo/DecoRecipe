@@ -18,6 +18,23 @@
 		2BAA741C1B21CEAA008AC7D9 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA741B1B21CEAA008AC7D9 /* ColorUtil.swift */; };
 		2BAA74261B21D7AA008AC7D9 /* CVUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA74251B21D7AA008AC7D9 /* CVUtil.mm */; };
 		2BAA74281B21D8A6008AC7D9 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAA74271B21D8A6008AC7D9 /* opencv2.framework */; };
+		2BBE79891B243BE600664EE4 /* NextParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79871B243BE600664EE4 /* NextParticle.sks */; };
+		2BBE798A1B243BE600664EE4 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79881B243BE600664EE4 /* spark.png */; };
+		2BBE79941B243D4500664EE4 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE798D1B243D4500664EE4 /* blue.png */; };
+		2BBE79951B243D4500664EE4 /* manicurist.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE798E1B243D4500664EE4 /* manicurist.png */; };
+		2BBE79961B243D4500664EE4 /* manicuristpush.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE798F1B243D4500664EE4 /* manicuristpush.png */; };
+		2BBE79971B243D4500664EE4 /* parts.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79901B243D4500664EE4 /* parts.png */; };
+		2BBE79981B243D4500664EE4 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79911B243D4500664EE4 /* photo.png */; };
+		2BBE79991B243D4500664EE4 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79921B243D4500664EE4 /* sample.png */; };
+		2BBE799A1B243D4500664EE4 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79931B243D4500664EE4 /* white.png */; };
+		2BBE799D1B243D6700664EE4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE799C1B243D6700664EE4 /* logo.png */; };
+		2BBE79A41B243D9100664EE4 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE799E1B243D9100664EE4 /* 58.png */; };
+		2BBE79A51B243D9100664EE4 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE799F1B243D9100664EE4 /* 80.png */; };
+		2BBE79A61B243D9100664EE4 /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79A01B243D9100664EE4 /* 87.png */; };
+		2BBE79A71B243D9100664EE4 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79A11B243D9100664EE4 /* 120.png */; };
+		2BBE79A81B243D9100664EE4 /* 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79A21B243D9100664EE4 /* 180.png */; };
+		2BBE79A91B243D9100664EE4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79A31B243D9100664EE4 /* icon.png */; };
+		2BBE79AB1B243DB300664EE4 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79AA1B243DB300664EE4 /* splash.png */; };
 		2BCB2A1A1B1F459600F1DD2B /* DecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB2A191B1F459600F1DD2B /* DecoViewController.swift */; };
 		2BCB2A1C1B1F4D5600F1DD2B /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB2A1B1B1F4D5600F1DD2B /* ImageUtil.swift */; };
 		2BEBB4391B23CC8000CFD747 /* done2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBB4381B23CC8000CFD747 /* done2.png */; };
@@ -109,6 +126,23 @@
 		2BAA74241B21D7A9008AC7D9 /* Manicurist-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Manicurist-Bridging-Header.h"; sourceTree = "<group>"; };
 		2BAA74251B21D7AA008AC7D9 /* CVUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVUtil.mm; sourceTree = "<group>"; };
 		2BAA74271B21D8A6008AC7D9 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		2BBE79871B243BE600664EE4 /* NextParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NextParticle.sks; sourceTree = "<group>"; };
+		2BBE79881B243BE600664EE4 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		2BBE798D1B243D4500664EE4 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		2BBE798E1B243D4500664EE4 /* manicurist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manicurist.png; sourceTree = "<group>"; };
+		2BBE798F1B243D4500664EE4 /* manicuristpush.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manicuristpush.png; sourceTree = "<group>"; };
+		2BBE79901B243D4500664EE4 /* parts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parts.png; sourceTree = "<group>"; };
+		2BBE79911B243D4500664EE4 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		2BBE79921B243D4500664EE4 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		2BBE79931B243D4500664EE4 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		2BBE799C1B243D6700664EE4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		2BBE799E1B243D9100664EE4 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
+		2BBE799F1B243D9100664EE4 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
+		2BBE79A01B243D9100664EE4 /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87.png; sourceTree = "<group>"; };
+		2BBE79A11B243D9100664EE4 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
+		2BBE79A21B243D9100664EE4 /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 180.png; sourceTree = "<group>"; };
+		2BBE79A31B243D9100664EE4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		2BBE79AA1B243DB300664EE4 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		2BCB2A191B1F459600F1DD2B /* DecoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecoViewController.swift; sourceTree = "<group>"; };
 		2BCB2A1B1B1F4D5600F1DD2B /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		2BEBB4381B23CC8000CFD747 /* done2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done2.png; sourceTree = "<group>"; };
@@ -216,9 +250,9 @@
 		2B61D3EC1B1CA2F900EB10B5 /* DecoRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				2BAA74151B21BA39008AC7D9 /* images */,
 				2BF305111B22802300F0157F /* UIView */,
 				2BAA74231B21D766008AC7D9 /* obj-c */,
-				2BAA74151B21BA39008AC7D9 /* images */,
 				2BCB2A1D1B1F4D6200F1DD2B /* Util */,
 				2B61D3EF1B1CA2F900EB10B5 /* AppDelegate.swift */,
 				2B61D3F11B1CA2F900EB10B5 /* SearchViewController.swift */,
@@ -230,6 +264,8 @@
 				2B61D3ED1B1CA2F900EB10B5 /* Supporting Files */,
 				2BF305241B22C12000F0157F /* DetailViewController.swift */,
 				2BF305261B22D38800F0157F /* ManicuristViewController.swift */,
+				2BBE79871B243BE600664EE4 /* NextParticle.sks */,
+				2BBE79881B243BE600664EE4 /* spark.png */,
 			);
 			path = DecoRecipe;
 			sourceTree = "<group>";
@@ -263,6 +299,8 @@
 		2BAA74151B21BA39008AC7D9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2BBE799B1B243D4E00664EE4 /* icon */,
+				2BBE798C1B243D2900664EE4 /* detail */,
 				2BF305351B22EC0000F0157F /* manicurist */,
 				2BF305281B22DB3300F0157F /* icon */,
 				2BF3051B1B22997600F0157F /* guideline */,
@@ -287,6 +325,35 @@
 				2BAA74241B21D7A9008AC7D9 /* Manicurist-Bridging-Header.h */,
 			);
 			name = "obj-c";
+			sourceTree = "<group>";
+		};
+		2BBE798C1B243D2900664EE4 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				2BBE798D1B243D4500664EE4 /* blue.png */,
+				2BBE798E1B243D4500664EE4 /* manicurist.png */,
+				2BBE798F1B243D4500664EE4 /* manicuristpush.png */,
+				2BBE79901B243D4500664EE4 /* parts.png */,
+				2BBE79911B243D4500664EE4 /* photo.png */,
+				2BBE79921B243D4500664EE4 /* sample.png */,
+				2BBE79931B243D4500664EE4 /* white.png */,
+			);
+			name = detail;
+			sourceTree = "<group>";
+		};
+		2BBE799B1B243D4E00664EE4 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				2BBE79AA1B243DB300664EE4 /* splash.png */,
+				2BBE799E1B243D9100664EE4 /* 58.png */,
+				2BBE799F1B243D9100664EE4 /* 80.png */,
+				2BBE79A01B243D9100664EE4 /* 87.png */,
+				2BBE79A11B243D9100664EE4 /* 120.png */,
+				2BBE79A21B243D9100664EE4 /* 180.png */,
+				2BBE79A31B243D9100664EE4 /* icon.png */,
+				2BBE799C1B243D6700664EE4 /* logo.png */,
+			);
+			name = icon;
 			sourceTree = "<group>";
 		};
 		2BCB2A1D1B1F4D6200F1DD2B /* Util */ = {
@@ -497,38 +564,52 @@
 			files = (
 				2BEBB4541B23CF5300CFD747 /* round02.png in Resources */,
 				2BEBB4591B23CF5300CFD747 /* square01.png in Resources */,
+				2BBE79981B243D4500664EE4 /* photo.png in Resources */,
 				2BEBB45A1B23CF5300CFD747 /* square02.png in Resources */,
 				2B61D3F71B1CA2F900EB10B5 /* Main.storyboard in Resources */,
 				2BF305231B22BB0200F0157F /* nail0.jpg in Resources */,
 				2BF305141B2286C400F0157F /* nail1.jpg in Resources */,
 				2B61D3FC1B1CA2F900EB10B5 /* LaunchScreen.xib in Resources */,
+				2BBE79941B243D4500664EE4 /* blue.png in Resources */,
 				2BEBB4581B23CF5300CFD747 /* roundicon2.png in Resources */,
 				2BEBB46E1B23CFB700CFD747 /* upperbar.png in Resources */,
 				2BEBB4671B23CFB700CFD747 /* colorpalette1.png in Resources */,
 				2BEBB4501B23CF5300CFD747 /* ovalicon3.png in Resources */,
 				2BEBB45C1B23CF5300CFD747 /* squareicon2.png in Resources */,
 				2BEBB4571B23CF5300CFD747 /* roundicon3.png in Resources */,
+				2BBE79A51B243D9100664EE4 /* 80.png in Resources */,
 				2BEBB45E1B23CF5300CFD747 /* squareicon3.png in Resources */,
 				2BF305451B23159700F0157F /* bottombar.png in Resources */,
 				2BEBB47F1B23FEE200CFD747 /* g_round03.png in Resources */,
 				2BEBB46A1B23CFB700CFD747 /* colorpalette4.png in Resources */,
 				2BEBB46D1B23CFB700CFD747 /* sidebar3.png in Resources */,
+				2BBE79A71B243D9100664EE4 /* 120.png in Resources */,
 				2BEBB44D1B23CF5300CFD747 /* oval01.png in Resources */,
+				2BBE79A61B243D9100664EE4 /* 87.png in Resources */,
 				2BEBB4861B23FF8400CFD747 /* oval02_pink.png in Resources */,
 				2BAA741A1B21C2FB008AC7D9 /* base.png in Resources */,
+				2BBE79991B243D4500664EE4 /* sample.png in Resources */,
 				2BEBB47D1B23FEE200CFD747 /* g_round01.png in Resources */,
 				2BF305161B2286CC00F0157F /* nail2.jpg in Resources */,
 				2BF305201B22A1F100F0157F /* g_oval.png in Resources */,
+				2BBE79A91B243D9100664EE4 /* icon.png in Resources */,
 				2BEBB4511B23CF5300CFD747 /* ovalicon2.png in Resources */,
+				2BBE798A1B243BE600664EE4 /* spark.png in Resources */,
 				2BF3053C1B22EC1300F0157F /* select_nail3.png in Resources */,
+				2BBE79AB1B243DB300664EE4 /* splash.png in Resources */,
 				2BF3051D1B22998400F0157F /* g_square.png in Resources */,
+				2BBE79A41B243D9100664EE4 /* 58.png in Resources */,
 				2BEBB46B1B23CFB700CFD747 /* done1.png in Resources */,
 				2BEBB4801B23FEE200CFD747 /* g_square01.png in Resources */,
 				2BF3053B1B22EC1300F0157F /* select_nail2.png in Resources */,
 				2BEBB45B1B23CF5300CFD747 /* square03.png in Resources */,
+				2BBE79A81B243D9100664EE4 /* 180.png in Resources */,
 				2BF3052D1B22DB5F00F0157F /* icon1.png in Resources */,
+				2BBE79951B243D4500664EE4 /* manicurist.png in Resources */,
 				2BEBB47B1B23FEE200CFD747 /* g_oval02.png in Resources */,
+				2BBE79961B243D4500664EE4 /* manicuristpush.png in Resources */,
 				2BEBB44F1B23CF5300CFD747 /* oval03.png in Resources */,
+				2BBE79971B243D4500664EE4 /* parts.png in Resources */,
 				2BEBB47C1B23FEE200CFD747 /* g_oval03.png in Resources */,
 				2BEBB47E1B23FEE200CFD747 /* g_round02.png in Resources */,
 				2BEBB4821B23FEE200CFD747 /* g_square03.png in Resources */,
@@ -537,12 +618,14 @@
 				2BF3053E1B22EC1A00F0157F /* select_words.png in Resources */,
 				2BF3052F1B22DB5F00F0157F /* icon3.png in Resources */,
 				2BEBB4701B23DDAE00CFD747 /* sidebar2.png in Resources */,
+				2BBE79891B243BE600664EE4 /* NextParticle.sks in Resources */,
 				2BEBB4531B23CF5300CFD747 /* round01.png in Resources */,
 				2BF3053A1B22EC1300F0157F /* select_nail1.png in Resources */,
 				2BF305211B22A1F100F0157F /* g_round.png in Resources */,
 				2BEBB46C1B23CFB700CFD747 /* sidebar1.png in Resources */,
 				2B61D3F91B1CA2F900EB10B5 /* Images.xcassets in Resources */,
 				2BEBB4811B23FEE200CFD747 /* g_square02.png in Resources */,
+				2BBE799D1B243D6700664EE4 /* logo.png in Resources */,
 				2BEBB4691B23CFB700CFD747 /* colorpalette3.png in Resources */,
 				2BEBB47A1B23FEE200CFD747 /* g_oval01.png in Resources */,
 				2BEBB45D1B23CF5300CFD747 /* squareicon1.png in Resources */,
@@ -551,6 +634,7 @@
 				2BEBB4681B23CFB700CFD747 /* colorpalette2.png in Resources */,
 				2BEBB4521B23CF5300CFD747 /* ovalicon1.png in Resources */,
 				2BEBB44E1B23CF5300CFD747 /* oval02.png in Resources */,
+				2BBE799A1B243D4500664EE4 /* white.png in Resources */,
 				2BEBB4851B23FF8400CFD747 /* oval02_black.png in Resources */,
 				2BEBB4551B23CF5300CFD747 /* round03.png in Resources */,
 			);

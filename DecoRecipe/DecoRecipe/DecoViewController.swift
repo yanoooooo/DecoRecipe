@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SpriteKit
 
 class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak var mainImg: UIImageView!
@@ -29,6 +30,14 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
     let datamodel =  NailDataUtil.sharedInstance
 
     var recipiNum : Int = 1
+    
+    //animation
+    let kAnimationDuration = 1.0
+    let kParticleName = "NextParticle"
+    
+    var skView: SKView!
+    var isAnimating: Bool = false
+    var isFavorite: Bool = false
     
     
     override func viewDidLoad() {
@@ -85,6 +94,34 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         
         // UIImageViewをViewに追加する.
         self.view.addSubview(partsImgView)
+    }
+    
+    //animation
+    private func loadParticle(){
+        let w = CGFloat(320), h = CGFloat(568)
+        let scene = SKScene(size: CGSizeMake(w, h))
+        scene.backgroundColor = UIColor.clearColor()
+        
+        // STEP2: create sk view
+        let centerX = CGRectGetMidX(self.view.frame)
+        let centerY = CGRectGetMidY(self.view.frame)
+        let skFrame = CGRectMake(centerX - w / 2, centerY - h / 2, w, h)
+        skView = SKView(frame: skFrame)
+        skView.allowsTransparency = true
+        skView.userInteractionEnabled = false
+        skView.presentScene(scene)
+        
+        // STEP3: add sk view
+        self.view.addSubview(skView)
+        
+        // STEP4: add particle to scene
+        let path = NSBundle.mainBundle().pathForResource(kParticleName, ofType: "sks")
+        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as! SKEmitterNode
+        particle.name = kParticleName
+        particle.position = CGPointMake(w / 2, h / 2)
+        particle.alpha = 0
+        scene.addChild(particle)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -233,6 +270,13 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
                 self.view.addSubview(endMessage)
                 
             }else{
+                //animation
+                /*var scene = skView.scene!
+                // you can get SKNode from SKScene
+                var particle = scene.childNodeWithName(kParticleName)!
+                showParticle(particle, completion: {
+                    self.isAnimating = false
+                })*/
                 //レシピの画像を表示する
                 // 表示する画像を設定する.
                 var recipiTextNum:String = String(self.recipiNum)
@@ -257,6 +301,15 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
             
         }
 
+    }
+    
+    //animation
+    private func showParticle(particle: SKNode , completion: () -> Void = {}) {
+        particle.alpha = 1
+        let fadeout = SKAction.fadeOutWithDuration(kAnimationDuration)
+        particle.runAction(fadeout, completion: {
+            completion()
+        })
     }
     
 }
