@@ -16,12 +16,23 @@ class DetailViewController:UIViewController, UIScrollViewDelegate{
     
     @IBOutlet weak var name: UILabel!
     
+    @IBOutlet weak var itemPrice: UILabel!
+    @IBOutlet weak var itemName: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var itemImage: UIImageView!
+   
     //ネイルデータモデル
-    let datamodel =  NailDataUtil()
+    let datamodel =  NailDataUtil.sharedInstance
     
     override func viewDidLoad() {
-        name.text = "aaa"
+        name.text = datamodel.getNeilDetailData("data"+datamodel.selectedNum).name
         
+        image.image = UIImage(named: datamodel.getNeilDetailData("data"+datamodel.selectedNum).image)
+        
+        time.text = datamodel.getNeilDetailData("data"+datamodel.selectedNum).time
+      
+
         // ページ数を定義する.
         let pageSize = 4
         
@@ -50,6 +61,12 @@ class DetailViewController:UIViewController, UIScrollViewDelegate{
             myLabel.textAlignment = NSTextAlignment.Center
             myLabel.layer.masksToBounds = true
             myLabel.text = "Page\(i)"
+            var itemnum: String = String(i)
+           // itemName.text = datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).name
+          //  itemPrice.text = datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).price
+            
+           // itemImage.image = UIImage(named:  datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).image)
+           
             myLabel.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
             myLabel.layer.cornerRadius = 40.0
             

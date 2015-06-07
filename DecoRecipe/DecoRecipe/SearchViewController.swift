@@ -10,7 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var myCollectionView: UICollectionView!
-    let datamodel =  NailDataUtil()
+    let datamodel =  NailDataUtil.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,19 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         return cell
     }
+    
+    
+    /*
+    Cellが選択された際に呼び出される
+    */
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        var num: String = String(indexPath.row)
+        //選択している番号を保存
+        datamodel.setSelectedItemId(num)
+        
+    }
+    
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1

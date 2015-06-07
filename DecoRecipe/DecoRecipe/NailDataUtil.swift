@@ -14,13 +14,26 @@ class NailDataUtil: NSObject {
     //NSUserDefaultsのインスタンスを生成
     private let defaults = NSUserDefaults.standardUserDefaults()
     
+    class var sharedInstance : NailDataUtil {
+        struct Static {
+            static let instance : NailDataUtil = NailDataUtil()
+            
+        }
+        return Static.instance
+    }
+
+    
     //こでだけせ生成
     // singleton in Swift 1.2
-    static let sharedController = NailDataUtil()
+    //static let sharedController = NailDataUtil()
     
     //データ用の配列を生成
     var recipiSizde: Int = 0
     
+    //選択しているデータの数
+    var selectedNum = ""
+
+   
     //var recipiInfo: Dictionary = ["image":"","red":0.0,"green":0.0,"blue":0.0,"alpha":0.0]
     
     //plistからデータを取り出す関数
@@ -35,9 +48,9 @@ class NailDataUtil: NSObject {
         let recipi3 = ["image":"nail2.jpg","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
         
         //データ入れる
-        let saveData = ["time":"30分","name": "MYM❤︎", "description": "初心者おすすめ！", "image": "nail0.jpg","nail":itemData,"fude":itemData2,"stone":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
-        let saveData2 = ["time":"500年","name": "フランス革命", "description": "革命を歌う！", "image": "nail1.jpg","nail":itemData,"fude":itemData2,"stone":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
-         let saveData3 = ["time":"40分","name": "インターネットワンダーランド", "description": "インターネットはワンダーランドだ！", "image": "nail2.jpg","nail":itemData,"fude":itemData2,"stone":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
+        let saveData = ["time":"30分","name": "MYM❤︎", "description": "初心者おすすめ！", "image": "nail0.jpg","item0":itemData,"item1":itemData2,"item3":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
+        let saveData2 = ["time":"500年","name": "フランス革命", "description": "革命を歌う！", "image": "nail1.jpg","item0":itemData,"item1":itemData2,"item3":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
+         let saveData3 = ["time":"40分","name": "インターネットワンダーランド", "description": "インターネットはワンダーランドだ！", "image": "nail2.jpg","item0":itemData,"item1":itemData2,"item2":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3]
         defaults.setObject(saveData, forKey: "data0")
         defaults.setObject(saveData2, forKey: "data1")
         defaults.setObject(saveData3, forKey: "data2")
@@ -96,7 +109,7 @@ class NailDataUtil: NSObject {
     *return nailName, nailImage,nailTime    
     **/
     
-    func getNeilDetailData(id : String)-> (String,String,String)
+    func getNeilDetailData(id : String)-> (name:String,image:String,time:String)
     {
         if let data = defaults.dictionaryForKey(id)
         {
@@ -122,15 +135,29 @@ class NailDataUtil: NSObject {
             
             if let item = data[itemName]{
                 var image:String = item["image"] as! String
-                var name:String = item["price"] as! String
-                var price:String = item["name"] as! String
+                var name:String = item["name"] as! String
+                var price:String = item["price"] as! String
                 return (image,name,price)
             }
         }
         return ("","","")
     }
 
-    
-    
-    
+
+    /**
+    *選択しているアイテムID
+    */
+    func setSelectedItemId(num:String)
+    {
+        self.selectedNum = num
+           }
+
+    /**
+    *選択しているアイテムID
+    */
+    func getSelectedItemId()->(String)
+    {
+        return self.selectedNum
+        
+    }
 }
