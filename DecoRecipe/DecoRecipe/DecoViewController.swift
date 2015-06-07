@@ -13,6 +13,7 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var guideImg: UIImageView!
     
+    var endMessage: UILabel!
     var partsImgView: UIImageView!
     var partsImg: UIImage!
     
@@ -49,7 +50,7 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         self.guideImg.image = UIImage(named:datamodel.getNeilDetailData("data"+datamodel.selectedNum).guide)
         
         //最初のパーツの設定
-        // UIImageViewを作成する.
+        // UIImageViewを作成する. ガイドのサイズと同じ
         partsImgView = UIImageView(frame: guideImg.frame)
         
         //レシピの画像を表示する
@@ -58,11 +59,14 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         var recipiTextNum:String = String(self.recipiNum)
         partsImg = UIImage(named: datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).image)
         
+        var imageRect:CGRect = CGRectMake(guideImg.frame.origin.x, guideImg.frame.origin.y,partsImg.size.width/2.5, partsImg.size.height/2)
+        partsImgView.frame = imageRect
+        
         // 画像をUIImageViewに設定する.
         partsImgView.image = partsImg
         
         // 画像の表示する座標を指定する.
-        partsImgView.layer.position = CGPoint(x: guideImg.frame.origin.x+guideImg.frame.size.width/2, y: guideImg.frame.origin.y+guideImg.frame.size.height/2)
+        //partsImgView.layer.position = CGPoint(x: guideImg.frame.origin.x+guideImg.frame.size.width/2, y: guideImg.frame.origin.y+guideImg.frame.size.height/2)
         
         //alpha
         partsImgView.alpha = 0.1;
@@ -198,21 +202,44 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         {
             println("一致")
             recipiNum = recipiNum+1
+            
+         
             var recipiTextNum:String = String(self.recipiNum)
             partsImg = UIImage(named: datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).image)
-            // 画像をUIImageViewに設定する.
-            partsImgView.image = partsImg
             
-            // 画像の表示する座標を指定する.
-            partsImgView.layer.position = CGPoint(x: guideImg.frame.origin.x+guideImg.frame.size.width/2, y: guideImg.frame.origin.y+guideImg.frame.size.height/2)
+            //レシピの画像がnulだったら終了
+            if(datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).image == "")
+            {
+                println("終わり")
+                endMessage = UILabel(frame: CGRectMake(100,100,200,300))
+                endMessage.backgroundColor = UIColor.blackColor()
+                endMessage.textColor = UIColor.whiteColor()
+                endMessage.textAlignment = NSTextAlignment.Center
+                endMessage.layer.masksToBounds = true
+                endMessage.text = "完成したかな？"
+                // UIImageViewをViewに追加する.
+                self.view.addSubview(endMessage)
+                
+            }else{
+                //レシピの画像を表示する
+                // 表示する画像を設定する.
+                var recipiTextNum:String = String(self.recipiNum)
+                partsImg = UIImage(named: datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).image)
+                
+                var imageRect:CGRect = CGRectMake(guideImg.frame.origin.x, guideImg.frame.origin.y,partsImg.size.width/2.5, partsImg.size.height/2)
+                partsImgView.frame = imageRect
+                
+                // 画像をUIImageViewに設定する.
+                partsImgView.image = partsImg
+                
+                //alpha
+                partsImgView.alpha = 0.1;
+                
+                // UIImageViewをViewに追加する.
+                self.view.addSubview(partsImgView)
+            }
             
-            //alpha
-            partsImgView.alpha = 0.1;
             
-            // UIImageViewをViewに追加する.
-            self.view.addSubview(partsImgView)
-
-
         }
 
     }
