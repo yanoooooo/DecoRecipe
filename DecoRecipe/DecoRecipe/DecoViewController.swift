@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import SpriteKit
+//import SpriteKit
 
 class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak var mainImg: UIImageView!
@@ -35,7 +35,7 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
     let kAnimationDuration = 1.0
     let kParticleName = "NextParticle"
     
-    var skView: SKView!
+  //  var skView: SKView!
     var isAnimating: Bool = false
     var isFavorite: Bool = false
     
@@ -97,7 +97,7 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
     }
     
     //animation
-    private func loadParticle(){
+  /*  private func loadParticle(){
         let w = CGFloat(320), h = CGFloat(568)
         let scene = SKScene(size: CGSizeMake(w, h))
         scene.backgroundColor = UIColor.clearColor()
@@ -122,7 +122,7 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         particle.alpha = 0
         scene.addChild(particle)
         
-    }
+    }*/
     
     override func viewDidAppear(animated: Bool) {
         light.torchMode = AVCaptureTorchMode.On //On
@@ -304,12 +304,12 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
     }
     
     //animation
-    private func showParticle(particle: SKNode , completion: () -> Void = {}) {
+   /* private func showParticle(particle: SKNode , completion: () -> Void = {}) {
         particle.alpha = 1
         let fadeout = SKAction.fadeOutWithDuration(kAnimationDuration)
         particle.runAction(fadeout, completion: {
             completion()
         })
-    }
+    }*/
     
 }

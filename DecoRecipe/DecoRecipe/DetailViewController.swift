@@ -20,7 +20,7 @@ class DetailViewController:UIViewController, UIScrollViewDelegate{
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var itemImage: UIImageView!
+    //@IBOutlet weak var itemImage: UIImageView!
    
     //ネイルデータモデル
     let datamodel =  NailDataUtil.sharedInstance
@@ -34,7 +34,7 @@ class DetailViewController:UIViewController, UIScrollViewDelegate{
       
 
         // ページ数を定義する.
-        let pageSize = 4
+        let pageSize = 3
         
         // 縦方向と、横方向のインディケータを非表示にする.
         itemScroll.showsHorizontalScrollIndicator = false;
@@ -54,23 +54,39 @@ class DetailViewController:UIViewController, UIScrollViewDelegate{
         
         // ページ数分ボタンを生成する.
         for var i = 0; i < pageSize; i++ {
-            // ページごとに異なるラベルを生成する.
+           
+            
+            // アイテム（料金)ラベルを作成
             let myLabel:UILabel = UILabel(frame: CGRectMake(CGFloat(i) * itemScroll.frame.width + itemScroll.frame.width/2 - 40, itemScroll.frame.height/2 - 40, 80, 80))
             myLabel.backgroundColor = UIColor.blackColor()
             myLabel.textColor = UIColor.whiteColor()
             myLabel.textAlignment = NSTextAlignment.Center
             myLabel.layer.masksToBounds = true
-            myLabel.text = "Page\(i)"
-            var itemnum: String = String(i)
-           // itemName.text = datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).name
-          //  itemPrice.text = datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).price
-            
-           // itemImage.image = UIImage(named:  datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).image)
            
-            myLabel.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
-            myLabel.layer.cornerRadius = 40.0
             
+            //アイテム
+            let itemNamelabel:UILabel = UILabel(frame: CGRectMake(CGFloat(i) * itemScroll.frame.width + itemScroll.frame.width/2 - 40, itemScroll.frame.height/2 - 50, 120, 30))
+            itemNamelabel.backgroundColor = UIColor.blackColor()
+            itemNamelabel.textColor = UIColor.whiteColor()
+            itemNamelabel.textAlignment = NSTextAlignment.Center
+            itemNamelabel.layer.masksToBounds = true
+        
+            var itemnum: String = String(i)
+            itemNamelabel.text = datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).name
+           
+            //画像
+            var itemImageView: UIImageView = UIImageView(frame: CGRectMake(CGFloat(i) * itemScroll.frame.width, itemScroll.frame.height/5-15, 70, 70))
+            itemImageView.image = UIImage(named:  datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).image)
+            
+           
+            myLabel.text = datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).price
+            myLabel.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
+            //myLabel.layer.cornerRadius = 40.0
+            
+            // UIImageViewをViewに追加する.
+            itemScroll.addSubview(itemImageView)
             itemScroll.addSubview(myLabel)
+            itemScroll.addSubview(itemNamelabel)
         }
         
         // PageControlを作成する.

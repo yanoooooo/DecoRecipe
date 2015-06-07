@@ -40,9 +40,9 @@ class NailDataUtil: NSObject {
     func setPlistData()
     {
         // データを用意
-        let itemData = ["name":"シャネル","price":"3000円","image":"ががががが"]
-        let itemData2 = ["name":"ネイル工房オリジナルジェルネイルブラシ","price":"1000円","image":"ががががが"]
-        let itemData3 = ["name":"ストーン","price":"500円","image":"ががががが"]
+        let itemData = ["name":"白マニキュア","price":"300円","image":"white.png"]
+        let itemData2 = ["name":"青マニキュア","price":"1000円","image":"blue.png"]
+        let itemData3 = ["name":"ストーン","price":"500円","image":"parts.png"]
         let recipi1 = ["image":"g_oval01.png","red":248,"green":21,"blue": 60,"alpha":1.0,"x":128.0,"y":145.0]
         let recipi2 = ["image":"g_oval03.png","red":255,"green":255,"blue":255,"alpha":1.0,"x":128.0,"y":230.0]
         let recipi3 = ["image":"g_oval02.png","red":0,"green":206,"blue":209,"alpha":1.0,"x":130.0,"y":220.0]
@@ -58,8 +58,8 @@ class NailDataUtil: NSObject {
 
         
         //データ入れる
-        let saveData = ["time":"30分","name": "MYM❤︎", "description": "初心者おすすめ！", "image": "nail0.jpg","item0":itemData,"item1":itemData2,"item3":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3,"guideLine":"g_oval.png"]
-        let saveData2 = ["time":"500年","name": "フランス革命", "description": "革命を歌う！", "image": "nail1.jpg","item0":itemData,"item1":itemData2,"item3":itemData3,"recipi1":recipi2_1,"recipi2":recipi2_2,"recipi3":recipi2_3,"guideLine":"g_round.png"]
+        let saveData = ["time":"30分","name": "MYM❤︎", "description": "初心者おすすめ！", "image": "photo.png","item0":itemData,"item1":itemData2,"item2":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3,"guideLine":"g_oval.png"]
+        let saveData2 = ["time":"500年","name": "フランス革命", "description": "革命を歌う！", "image": "nail1.jpg","item0":itemData,"item1":itemData2,"item2":itemData3,"recipi1":recipi2_1,"recipi2":recipi2_2,"recipi3":recipi2_3,"guideLine":"g_round.png"]
         let saveData3 = ["time":"40分","name": "インターネットワンダーランド", "description": "インターネットはワンダーランドだ！", "image": "nail2.jpg","item0":itemData,"item1":itemData2,"item2":itemData3,"recipi1":recipi3_1 ,"recipi2":recipi3_2,"recipi3":recipi3_3,"guideLine":"g_square.png"]
         defaults.setObject(saveData, forKey: "data0")
         defaults.setObject(saveData2, forKey: "data1")
