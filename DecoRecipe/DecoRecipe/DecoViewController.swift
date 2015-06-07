@@ -59,7 +59,13 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         var recipiTextNum:String = String(self.recipiNum)
         partsImg = UIImage(named: datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).image)
         
-        var imageRect:CGRect = CGRectMake(guideImg.frame.origin.x, guideImg.frame.origin.y,partsImg.size.width/2.5, partsImg.size.height/2)
+        //var imageRect:CGRect = CGRectMake(guideImg.frame.origin.x, guideImg.frame.origin.y,partsImg.size.width/2.5, partsImg.size.height/2.5)
+    
+        var imageRect:CGRect = CGRectMake(datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).xPosition,
+                                          datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).yPosition,
+                                          partsImg.size.width/2.5,
+                                          partsImg.size.height/2)
+
         partsImgView.frame = imageRect
         
         // 画像をUIImageViewに設定する.
@@ -68,6 +74,12 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
         // 画像の表示する座標を指定する.
         //partsImgView.layer.position = CGPoint(x: guideImg.frame.origin.x+guideImg.frame.size.width/2, y: guideImg.frame.origin.y+guideImg.frame.size.height/2)
         
+        println (guideImg.frame.origin.x)
+        println (guideImg.frame.origin.y)
+
+        
+
+
         //alpha
         partsImgView.alpha = 0.1;
         
@@ -226,7 +238,10 @@ class DecoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
                 var recipiTextNum:String = String(self.recipiNum)
                 partsImg = UIImage(named: datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).image)
                 
-                var imageRect:CGRect = CGRectMake(guideImg.frame.origin.x, guideImg.frame.origin.y,partsImg.size.width/2.5, partsImg.size.height/2)
+                var imageRect:CGRect = CGRectMake(datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).xPosition,
+                                                  datamodel.getRecipiData("data"+datamodel.selectedNum, recipiNum: "recipi"+recipiTextNum).yPosition,
+                                                  partsImg.size.width/2.5,
+                                                  partsImg.size.height/2)
                 partsImgView.frame = imageRect
                 
                 // 画像をUIImageViewに設定する.

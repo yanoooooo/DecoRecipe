@@ -43,17 +43,17 @@ class NailDataUtil: NSObject {
         let itemData = ["name":"シャネル","price":"3000円","image":"ががががが"]
         let itemData2 = ["name":"ネイル工房オリジナルジェルネイルブラシ","price":"1000円","image":"ががががが"]
         let itemData3 = ["name":"ストーン","price":"500円","image":"ががががが"]
-        let recipi1 = ["image":"g_oval01.png","red":248,"green":21,"blue": 60,"alpha":1.0]
-        let recipi2 = ["image":"g_oval03.png","red":255,"green":255,"blue":255,"alpha":1.0]
-        let recipi3 = ["image":"g_oval02.png","red":0.0,"green":0.5,"blue":1.0,"alpha":1.0]
+        let recipi1 = ["image":"g_oval01.png","red":248,"green":21,"blue": 60,"alpha":1.0,"x":128.0,"y":145.0]
+        let recipi2 = ["image":"g_oval03.png","red":255,"green":255,"blue":255,"alpha":1.0,"x":128.0,"y":230.0]
+        let recipi3 = ["image":"g_oval02.png","red":0,"green":206,"blue":209,"alpha":1.0,"x":130.0,"y":220.0]
         
-        let recipi2_1 = ["image":"g_round01.png","red":248,"green":21,"blue":60,"alpha":1.0]
-        let recipi2_2 = ["image":"g_round02.png","red":255,"green":255,"blue":255,"alpha":1.0]
-        let recipi2_3 = ["image":"g_round03.png","red":0,"green":206,"blue":209,"alpha":1.0]
+        let recipi2_1 = ["image":"g_round01.png","red":248,"green":21,"blue":60,"alpha":1.0,"x":132.0,"y":145.0]
+        let recipi2_2 = ["image":"g_round02.png","red":255,"green":255,"blue":255,"alpha":1.0,"x":132.0,"y":145.0]
+        let recipi2_3 = ["image":"g_round03.png","red":0,"green":206,"blue":209,"alpha":1.0,"x":132.0,"y":213.0]
         
-        let recipi3_1 = ["image":"g_square01.png","red":248,"green":21,"blue": 60,"alpha":1.0]
-        let recipi3_2 = ["image":"g_square02.png","red":255,"green":255,"blue":255,"alpha":1.0]
-        let recipi3_3 = ["image":"g_square03.png","red":0,"green":206,"blue":209,"alpha":1.0]
+        let recipi3_1 = ["image":"g_square01.png","red":248,"green":21,"blue": 60,"alpha":1.0,"x":132.0,"y":145.0]
+        let recipi3_2 = ["image":"g_square02.png","red":255,"green":255,"blue":255,"alpha":1.0,"x":132.0,"y":180.0]
+        let recipi3_3 = ["image":"g_square03.png","red":0,"green":206,"blue":209,"alpha":1.0,"x":132.0,"y":145.0]
 
 
         
@@ -75,7 +75,7 @@ class NailDataUtil: NSObject {
     *return image, red,blue,green,alpha    
     **/
     
-    func getRecipiData( id : String ,recipiNum:String) -> (image:String, red:CGFloat, blue:CGFloat, green:CGFloat, alpha:CGFloat){
+    func getRecipiData( id : String ,recipiNum:String) -> (image:String, red:CGFloat, blue:CGFloat, green:CGFloat, alpha:CGFloat,xPosition:CGFloat,yPosition:CGFloat){
         
         if let name = defaults.dictionaryForKey(id)
         {
@@ -86,11 +86,14 @@ class NailDataUtil: NSObject {
                 var red:CGFloat = recipi["red"] as! CGFloat
                 var blue:CGFloat = recipi["blue"] as! CGFloat
                 var green:CGFloat = recipi["green"] as! CGFloat
+                var x:CGFloat = recipi["x"] as! CGFloat
+                var y:CGFloat = recipi["y"] as! CGFloat
+
         
-                return (image,red,blue,green,alpha)
+                return (image,red,blue,green,alpha,x,y)
             }
         }
-         return ("", 0,0,0,0)
+         return ("", 0,0,0,0,0,0)
     }
     
     
