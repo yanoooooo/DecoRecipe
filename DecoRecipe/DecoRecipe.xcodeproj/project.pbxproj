@@ -34,6 +34,7 @@
 		2BBE79C71B24420800664EE4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79BF1B24420800664EE4 /* icon.png */; };
 		2BBE79C81B24420800664EE4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79C01B24420800664EE4 /* logo.png */; };
 		2BBE79C91B24420800664EE4 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BBE79C11B24420800664EE4 /* splash.png */; };
+		2BBE79CB1B244DA100664EE4 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBE79CA1B244DA100664EE4 /* SpriteKit.framework */; };
 		2BCB2A1A1B1F459600F1DD2B /* DecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB2A191B1F459600F1DD2B /* DecoViewController.swift */; };
 		2BCB2A1C1B1F4D5600F1DD2B /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB2A1B1B1F4D5600F1DD2B /* ImageUtil.swift */; };
 		2BEBB4391B23CC8000CFD747 /* done2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBB4381B23CC8000CFD747 /* done2.png */; };
@@ -141,6 +142,7 @@
 		2BBE79BF1B24420800664EE4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2BBE79C01B24420800664EE4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		2BBE79C11B24420800664EE4 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		2BBE79CA1B244DA100664EE4 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		2BCB2A191B1F459600F1DD2B /* DecoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecoViewController.swift; sourceTree = "<group>"; };
 		2BCB2A1B1B1F4D5600F1DD2B /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		2BEBB4381B23CC8000CFD747 /* done2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done2.png; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBE79CB1B244DA100664EE4 /* SpriteKit.framework in Frameworks */,
 				2BAA74171B21C0FF008AC7D9 /* AVFoundation.framework in Frameworks */,
 				2BAA74281B21D8A6008AC7D9 /* opencv2.framework in Frameworks */,
 			);
@@ -228,6 +231,7 @@
 		2B61D3E11B1CA2F800EB10B5 = {
 			isa = PBXGroup;
 			children = (
+				2BBE79CA1B244DA100664EE4 /* SpriteKit.framework */,
 				2BAA74271B21D8A6008AC7D9 /* opencv2.framework */,
 				2BAA74161B21C0FF008AC7D9 /* AVFoundation.framework */,
 				2B61D3EC1B1CA2F900EB10B5 /* DecoRecipe */,
