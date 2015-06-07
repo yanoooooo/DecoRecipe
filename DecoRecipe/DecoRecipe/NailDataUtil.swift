@@ -61,10 +61,10 @@ class NailDataUtil: NSObject {
         let saveData = ["time":"30分","name": "MYM❤︎", "description": "初心者おすすめ！", "image": "photo.png","item0":itemData,"item1":itemData2,"item2":itemData3,"recipi1":recipi1,"recipi2":recipi2,"recipi3":recipi3,"guideLine":"g_oval.png"]
         let saveData2 = ["time":"500年","name": "フランス革命", "description": "革命を歌う！", "image": "nail1.jpg","item0":itemData,"item1":itemData2,"item2":itemData3,"recipi1":recipi2_1,"recipi2":recipi2_2,"recipi3":recipi2_3,"guideLine":"g_round.png"]
         let saveData3 = ["time":"40分","name": "インターネットワンダーランド", "description": "インターネットはワンダーランドだ！", "image": "nail2.jpg","item0":itemData,"item1":itemData2,"item2":itemData3,"recipi1":recipi3_1 ,"recipi2":recipi3_2,"recipi3":recipi3_3,"guideLine":"g_square.png"]
-        defaults.setObject(saveData, forKey: "data0")
-        defaults.setObject(saveData2, forKey: "data1")
-        defaults.setObject(saveData3, forKey: "data2")
-        defaults.synchronize()
+        //defaults.setObject(saveData, forKey: "data0")
+       // defaults.setObject(saveData2, forKey: "data1")
+       // defaults.setObject(saveData3, forKey: "data2")
+       // defaults.synchronize()
         
     }
     

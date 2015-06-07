@@ -58,16 +58,16 @@ class DetailViewController:UIViewController, UIScrollViewDelegate{
             
             // アイテム（料金)ラベルを作成
             let myLabel:UILabel = UILabel(frame: CGRectMake(CGFloat(i) * itemScroll.frame.width + itemScroll.frame.width/2 - 40, itemScroll.frame.height/2 - 40, 80, 80))
-            myLabel.backgroundColor = UIColor.blackColor()
-            myLabel.textColor = UIColor.whiteColor()
+            myLabel.backgroundColor = UIColor.orangeColor()
+            myLabel.textColor = UIColor.blackColor()
             myLabel.textAlignment = NSTextAlignment.Center
             myLabel.layer.masksToBounds = true
            
             
             //アイテム
             let itemNamelabel:UILabel = UILabel(frame: CGRectMake(CGFloat(i) * itemScroll.frame.width + itemScroll.frame.width/2 - 40, itemScroll.frame.height/2 - 50, 120, 30))
-            itemNamelabel.backgroundColor = UIColor.blackColor()
-            itemNamelabel.textColor = UIColor.whiteColor()
+            itemNamelabel.backgroundColor = UIColor.orangeColor()
+            itemNamelabel.textColor = UIColor.blackColor()
             itemNamelabel.textAlignment = NSTextAlignment.Center
             itemNamelabel.layer.masksToBounds = true
         
@@ -75,7 +75,7 @@ class DetailViewController:UIViewController, UIScrollViewDelegate{
             itemNamelabel.text = datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).name
            
             //画像
-            var itemImageView: UIImageView = UIImageView(frame: CGRectMake(CGFloat(i) * itemScroll.frame.width, itemScroll.frame.height/5-15, 70, 70))
+            var itemImageView: UIImageView = UIImageView(frame: CGRectMake(CGFloat(i) * itemScroll.frame.width+20, itemScroll.frame.height/5-15, 70, 70))
             itemImageView.image = UIImage(named:  datamodel.getNailItemData("data"+datamodel.selectedNum, itemName: "item"+itemnum).image)
             
            
@@ -90,8 +90,8 @@ class DetailViewController:UIViewController, UIScrollViewDelegate{
         }
         
         // PageControlを作成する.
-        itemPageCtrl = UIPageControl(frame: CGRectMake(0, (itemScroll.frame.origin.y+itemScroll.frame.height/2)+30, itemScroll.frame.width, 20))
-        itemPageCtrl.backgroundColor = UIColor.orangeColor()
+        itemPageCtrl = UIPageControl(frame: CGRectMake(0, (itemScroll.frame.origin.y+itemScroll.frame.height/2)+40, itemScroll.frame.width, 20))
+        itemPageCtrl.backgroundColor = UIColor.blackColor()
         
         // PageControlするページ数を設定する.
         itemPageCtrl.numberOfPages = pageSize
