@@ -305,21 +305,9 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t15-Iq-L8v">
                                 <rect key="frame" x="227" y="64" width="93" height="455"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLn-Ct-65O">
-                                        <rect key="frame" x="8" y="243" width="77" height="77"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Stone">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="StonebtnPush:" destination="nwg-JS-AbC" eventType="touchUpInside" id="cbF-0U-Mbi"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn8-8O-FyY">
-                                        <rect key="frame" x="8" y="136" width="77" height="77"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Parts">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn8-8O-FyY">
+                                        <rect key="frame" x="8" y="117" width="80" height="80"/>
+                                        <state key="normal" title="Parts" image="sidebar2.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -327,10 +315,9 @@
                                             <action selector="PartsbtnPush:" destination="nwg-JS-AbC" eventType="touchUpInside" id="ypb-a3-50E"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-Mw-XqQ">
-                                        <rect key="frame" x="8" y="30" width="77" height="77"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Base">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-Mw-XqQ">
+                                        <rect key="frame" x="8" y="18" width="80" height="80"/>
+                                        <state key="normal" image="sidebar3.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -339,12 +326,19 @@
                                             <action selector="BasebtnPush:" destination="nwg-JS-AbC" eventType="touchUpInside" id="gp0-aC-EwZ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLn-Ct-65O">
+                                        <rect key="frame" x="8" y="215" width="80" height="80"/>
+                                        <state key="normal" title="Stone" image="sidebar1.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="StonebtnPush:" destination="nwg-JS-AbC" eventType="touchUpInside" id="cbF-0U-Mbi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.10588235294117647" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACb-ko-VlV">
-                                <rect key="frame" x="46" y="109" width="131" height="248"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beu-eC-1md">
                                 <rect key="frame" x="220" y="64" width="7" height="455"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -352,6 +346,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACb-ko-VlV">
+                                <rect key="frame" x="43" y="72" width="130" height="240"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -461,6 +458,9 @@
         <image name="select_nail2.png" width="110" height="170"/>
         <image name="select_nail3.png" width="95" height="170"/>
         <image name="select_words.png" width="498" height="49"/>
+        <image name="sidebar1.png" width="116" height="116"/>
+        <image name="sidebar2.png" width="116" height="116"/>
+        <image name="sidebar3.png" width="116" height="116"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TUQ-Gp-dO8"/>
