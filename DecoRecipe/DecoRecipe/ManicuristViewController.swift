@@ -20,6 +20,9 @@ class ManicuristViewController: UIViewController{
     var PartsView: UIImageView!
     var StoneView: UIImageView!
     
+    //button
+    var BaseDonebtn: UIButton!
+    
     
     //flg
     var Baseflg: Bool = false
@@ -46,10 +49,43 @@ class ManicuristViewController: UIViewController{
         PartsView.image = UIImage(named: "bottombar.png")
         StoneView.image = UIImage(named: "bottombar.png")
         
+        //create done button
+        BaseDonebtn = UIButton()
+        
+        //set image
+        BaseDonebtn.setImage(UIImage(named: "done2.png"), forState: .Normal)
+        
+        //set size
+        BaseDonebtn.frame = CGRectMake(15,15,60,60)
+        
+        //add button event
+        
+        
+        // タイトルを設定する(ボタンがハイライトされた時).
+        /*BaseDonebtn.setTitle("ボタン(押された時)", forState: UIControlState.Highlighted)
+        BaseDonebtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Highlighted)
+        
+        // コーナーの半径を設定する.
+        BaseDonebtn.layer.cornerRadius = 20.0
+        
+        // ボタンの位置を指定する.
+        BaseDonebtn.layer.position = CGPoint(x: self.BaseView.frame.width/2, y:200)
+        
+        // タグを設定する.
+        BaseDonebtn.tag = 1*/
+        
+        // イベントを追加する.
+        //BaseDonebtn.addTarget(self, action: "onClickMyButton:", forControlEvents: .TouchUpInside)
+        
+        
+        
         //add view
         self.view.addSubview(BaseView)
         self.view.addSubview(PartsView)
         self.view.addSubview(StoneView)
+        
+        //add button
+        BaseView.addSubview(BaseDonebtn)
         
         //rendering
         let selectedImage: UIImage = nailImg.image!.imageWithRenderingMode(.AlwaysTemplate)
