@@ -19,9 +19,11 @@ class ManicuristViewController: UIViewController{
     var BaseView: UIImageView!
     var PartsView: UIImageView!
     var StoneView: UIImageView!
+    var UpperView: UIImageView!
     
     //parts
     var setPartsView: UIImageView!
+    var partsColor: UIColor!
     
     //button
     var BaseDonebtn: UIButton!
@@ -34,6 +36,12 @@ class ManicuristViewController: UIViewController{
     var basecolor3: UIButton!
     var basecolor4: UIButton!
     
+    //upperviewbutton
+    var uppercolor1: UIButton!
+    var uppercolor2: UIButton!
+    var uppercolor3: UIButton!
+    var uppercolor4: UIButton!
+    
     //partsview button
     var partsbtn1: UIButton!
     var partsbtn2: UIButton!
@@ -43,6 +51,7 @@ class ManicuristViewController: UIViewController{
     var Baseflg: Bool = false
     var Partsflg: Bool = false
     var Stoneflg: Bool = false
+    var Upperflg: Bool = false
     
     //SelecNailViewControllerからの引数
     var _second:String = ""
@@ -53,26 +62,25 @@ class ManicuristViewController: UIViewController{
         
         //selectnailから受け取った画像の出力
         nailImg.image = UIImage(named: _second)
+        nailImg.contentMode = UIViewContentMode.ScaleAspectFit
+        
+        nailImg.clipsToBounds = true
         
         //UIView
         BaseView = UIImageView(frame: CGRectMake(500,430,500, 90))
         PartsView = UIImageView(frame: CGRectMake(500,430,500, 90))
         StoneView = UIImageView(frame: CGRectMake(500,430,500, 90))
-        setPartsView = UIImageView(frame: CGRectMake(54,0,130,240))
-        
-        BaseView.contentMode = UIViewContentMode.ScaleAspectFit
-        PartsView.contentMode = UIViewContentMode.ScaleAspectFit
-        StoneView.contentMode = UIViewContentMode.ScaleAspectFit
-        
-        BaseView.clipsToBounds = true
-        PartsView.clipsToBounds = true
-        StoneView.clipsToBounds = true
-        setPartsView.clipsToBounds = true
+        UpperView = UIImageView(frame: CGRectMake(-420,330,420, 90))
+        setPartsView = UIImageView(frame: CGRectMake(43,72,0,0))
         
         //menu image
         BaseView.image = UIImage(named: "bottombar.png")
         PartsView.image = UIImage(named: "bottombar.png")
         StoneView.image = UIImage(named: "bottombar.png")
+        UpperView.image = UIImage(named: "upperbar.png")
+        
+        //hidden
+        UpperView.hidden = true
         
         //create done button
         BaseDonebtn = UIButton()
@@ -96,11 +104,13 @@ class ManicuristViewController: UIViewController{
         PartsDonebtn.addTarget(self, action: "PartsDonebtnPush:", forControlEvents: .TouchUpInside)
         StoneView.userInteractionEnabled = true
         StoneDonebtn.addTarget(self, action: "StoneDonebtnPush:", forControlEvents: .TouchUpInside)
+        UpperView.userInteractionEnabled = true
         
         //add view
         self.view.addSubview(BaseView)
         self.view.addSubview(PartsView)
         self.view.addSubview(StoneView)
+        self.view.addSubview(UpperView)
         self.view.addSubview(setPartsView)
         
         //add button
@@ -136,6 +146,35 @@ class ManicuristViewController: UIViewController{
         basecolor4.addTarget(self, action: "BaseColorbtnPush:", forControlEvents: .TouchUpInside)
         basecolor4.tag = 3
         self.BaseView.addSubview(basecolor4)
+        
+        //upper color button
+        uppercolor1 = UIButton()
+        uppercolor1.setImage(UIImage(named: "colorpalette1.png"), forState: .Normal)
+        uppercolor1.frame = CGRectMake(220,25,40,40)
+        uppercolor1.addTarget(self, action: "BaseColorbtnPush:", forControlEvents: .TouchUpInside)
+        uppercolor1.tag = 0
+        self.UpperView.addSubview(uppercolor1)
+        
+        uppercolor2 = UIButton()
+        uppercolor2.setImage(UIImage(named: "colorpalette2.png"), forState: .Normal)
+        uppercolor2.frame = CGRectMake(270,25,40,40)
+        uppercolor2.addTarget(self, action: "BaseColorbtnPush:", forControlEvents: .TouchUpInside)
+        uppercolor2.tag = 1
+        self.UpperView.addSubview(uppercolor2)
+        
+        uppercolor3 = UIButton()
+        uppercolor3.setImage(UIImage(named: "colorpalette3.png"), forState: .Normal)
+        uppercolor3.frame = CGRectMake(320,25,40,40)
+        uppercolor3.addTarget(self, action: "BaseColorbtnPush:", forControlEvents: .TouchUpInside)
+        uppercolor3.tag = 2
+        self.UpperView.addSubview(uppercolor3)
+        
+        uppercolor4 = UIButton()
+        uppercolor4.setImage(UIImage(named: "colorpalette4.png"), forState: .Normal)
+        uppercolor4.frame = CGRectMake(370,25,40,40)
+        uppercolor4.addTarget(self, action: "BaseColorbtnPush:", forControlEvents: .TouchUpInside)
+        uppercolor4.tag = 3
+        self.UpperView.addSubview(uppercolor4)
         
         //parts bar settings
         var iname: String = ""
@@ -175,50 +214,105 @@ class ManicuristViewController: UIViewController{
         nailImg.image = selectedImage
         nailImg.tintColor = UIColor(red: 255/255, green: 225/255, blue: 230/255, alpha: 255/255)
         
+        partsColor = UIColor(red: 255/255, green: 82/255, blue: 46/255, alpha: 255/255)
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        UpperView.hidden = true
     }
     
     //color button
     internal func BaseColorbtnPush(sender: UIButton){
-        switch sender.tag {
-        case 0:
-            nailImg.tintColor = UIColor(red: 255/255, green: 82/255, blue: 46/255, alpha: 255/255)
-        case 1:
-            nailImg.tintColor = UIColor(red: 251/255, green: 221/255, blue: 64/255, alpha: 255/255)
-        case 2:
-            nailImg.tintColor = UIColor(red: 3/255, green: 243/255, blue: 194/255, alpha: 255/255)
-        case 3:
-            nailImg.tintColor = UIColor(red: 3/255, green: 77/255, blue: 111/255, alpha: 255/255)
-        default:
-            break // do nothing
+        if Baseflg{
+            switch sender.tag {
+            case 0:
+                nailImg.tintColor = UIColor(red: 255/255, green: 82/255, blue: 46/255, alpha: 255/255)
+            case 1:
+                nailImg.tintColor = UIColor(red: 251/255, green: 221/255, blue: 64/255, alpha: 255/255)
+            case 2:
+                nailImg.tintColor = UIColor(red: 3/255, green: 243/255, blue: 194/255, alpha: 255/255)
+            case 3:
+                nailImg.tintColor = UIColor(red: 3/255, green: 77/255, blue: 111/255, alpha: 255/255)
+            default:
+                break // do nothing
+            }
+        }else if Upperflg{
+            switch sender.tag {
+            case 0:
+                setPartsView.tintColor = UIColor(red: 255/255, green: 82/255, blue: 46/255, alpha: 255/255)
+                partsColor = UIColor(red: 255/255, green: 82/255, blue: 46/255, alpha: 255/255)
+            case 1:
+                setPartsView.tintColor = UIColor(red: 251/255, green: 221/255, blue: 64/255, alpha: 255/255)
+                partsColor = UIColor(red: 251/255, green: 221/255, blue: 64/255, alpha: 255/255)
+            case 2:
+                setPartsView.tintColor = UIColor(red: 3/255, green: 243/255, blue: 194/255, alpha: 255/255)
+                partsColor = UIColor(red: 3/255, green: 243/255, blue: 194/255, alpha: 255/255)
+            case 3:
+                setPartsView.tintColor = UIColor(red: 3/255, green: 77/255, blue: 111/255, alpha: 255/255)
+                partsColor = UIColor(red: 3/255, green: 77/255, blue: 111/255, alpha: 255/255)
+            default:
+                break // do nothing
+            }
         }
         
     }
     
     //select parts button
     internal func SelectPartsbtnPush(sender: UIButton){
+        setPartsView.removeFromSuperview()
+        var iname: String = ""
         switch sender.tag {
         case 0:
-            var iname: String = ""
-            if _second == "g_oval.png"{iname = "oval01.png"}
-            else if _second == "g_round.png"{iname = "round01.png"}
-            else if _second == "g_square.png"{iname = "square01.png"}
-            
-            //setimageview
-            //setPartsView = UIImageView(frame: CGRectMake(0,0,90, 200))
-            setPartsView.image = UIImage(named: iname)
-            let selectedImage: UIImage = setPartsView.image!.imageWithRenderingMode(.AlwaysTemplate)
-            setPartsView.image = selectedImage
-            setPartsView.tintColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 255/255)
-            
-            setPartsView.contentMode = UIViewContentMode.ScaleAspectFit
-            
+            if _second == "g_oval.png"{
+                iname = "oval01.png"
+                setPartsView = UIImageView(frame: CGRectMake(43,72,130,116))
+            }
+            else if _second == "g_round.png"{
+                iname = "round01.png"
+                setPartsView = UIImageView(frame: CGRectMake(53,72,110,64))
+            }
+            else if _second == "g_square.png"{
+                iname = "square01.png"
+                setPartsView = UIImageView(frame: CGRectMake(53,72,111,66))
+            }
         case 1:
-            nailImg.tintColor = UIColor(red: 251/255, green: 221/255, blue: 64/255, alpha: 255/255)
+            if _second == "g_oval.png"{
+                iname = "oval02.png"
+                setPartsView = UIImageView(frame: CGRectMake(48,262,120,50))
+            }
+            else if _second == "g_round.png"{
+                iname = "round02.png"
+                setPartsView = UIImageView(frame: CGRectMake(53,72,110,64))
+            }
+            else if _second == "g_square.png"{
+                iname = "square02.png"
+                setPartsView = UIImageView(frame: CGRectMake(53,80+72,111,66))
+            }
         case 2:
-            nailImg.tintColor = UIColor(red: 3/255, green: 243/255, blue: 194/255, alpha: 255/255)
+            if _second == "g_oval.png"{
+                iname = "oval03.png"
+                setPartsView = UIImageView(frame: CGRectMake(43,272,130,40))
+            }
+            else if _second == "g_round.png"{
+                iname = "round03.png"
+                setPartsView = UIImageView(frame: CGRectMake(53,240-64+72,110,64))
+            }
+            else if _second == "g_square.png"{
+                iname = "square03.png"
+                setPartsView = UIImageView(frame: CGRectMake(53,72,111,66))
+            }
         default:
             break // do nothing
         }
+        //setimageview
+        setPartsView.image = UIImage(named: iname)
+        
+        let selectedImage: UIImage = setPartsView.image!.imageWithRenderingMode(.AlwaysTemplate)
+        setPartsView.image = selectedImage
+        setPartsView.tintColor = partsColor
+        
+        self.view.addSubview(setPartsView)
     }
     
     //base button
@@ -233,7 +327,9 @@ class ManicuristViewController: UIViewController{
     internal func PartsDonebtnPush(sender: UIButton){
         if Partsflg{
             Partsflg=false
+            Upperflg=false
             bottomBarOff(PartsView)
+            upperBarOff(UpperView)
         }
     }
     
@@ -258,7 +354,9 @@ class ManicuristViewController: UIViewController{
         //btn on
         if !Baseflg && !Partsflg && !Stoneflg{
             Partsflg=true
+            Upperflg=true
             bottomBarOn(PartsView)
+            upperBarOn(UpperView)
         }
     }
     
@@ -289,6 +387,28 @@ class ManicuristViewController: UIViewController{
                 // 移動先の座標を指定する.
                 iv.center = CGPoint(x: 570,y: 480);
             }, completion: {(Bool) -> Void in
+        })
+    }
+    
+    private func upperBarOn(iv:UIImageView){
+        // アニメーション処理
+        UpperView.hidden = false
+        UIView.animateWithDuration(NSTimeInterval(CGFloat(0.5)),
+            animations: {() -> Void in
+                // 移動先の座標を指定する.
+                iv.center = CGPoint(x: 0,y: 375);
+            }, completion: {(Bool) -> Void in
+        })
+    }
+    
+    private func upperBarOff(iv:UIImageView){
+        // アニメーション処理
+        UIView.animateWithDuration(NSTimeInterval(CGFloat(0.5)),
+            animations: {() -> Void in
+                // 移動先の座標を指定する.
+                iv.center = CGPoint(x: -420,y: 375);
+            }, completion: {
+                (Bool) -> Void in
         })
     }
     
